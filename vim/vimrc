@@ -1,2 +1,33 @@
+" Global configs.
+set nocompatible
+set number
+set incsearch
+set hlsearch
+set ruler
+
+" Run this vimrc
+map <F5> :source ~/.vimrc <CR>
+
+" File explorer
+" absolute width of netrw window
+let g:netrw_winsize = -28
+
+" do not display info on the top of window
+let g:netrw_banner = 0
+
+" tree-view
+let g:netrw_liststyle = 3
+
+" sort is affecting only: directories on the top, files below
+let g:netrw_sort_sequence = '[\/]$,*'
+
+" use the previous window to open file
+let g:netrw_browse_split = 4
+
+" Map a key for file explorer
+map <F3> :Lexplore <CR>
+
+
+" Language specific configs.
 autocmd Filetype python colorscheme industry
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
