@@ -1,10 +1,29 @@
+call plug#begin('~/.vim/plugged')
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'ryanolsonx/vim-lsp-python'
+call plug#end()
+
 " Global configs.
+
+filetype plugin indent on
+syntax on
+
+set backspace=indent,eol,start
+
 set nocompatible
 set number
 set incsearch
 set hlsearch
 set ruler
 
+" map keys for vim-lsp commands
+" Show pep8 document diagnostics
+map <F8> :LspDocumentDiagnostics <CR>
+" Go to :q
+"
 " Run this vimrc
 map <F5> :source ~/.vimrc <CR>
 
@@ -31,3 +50,4 @@ map <F3> :Lexplore <CR>
 " Language specific configs.
 autocmd Filetype python colorscheme industry
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
