@@ -1,3 +1,6 @@
+"
+" List of Plugins for vim-plug
+"
 call plug#begin('~/.vim/plugged')
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
@@ -6,48 +9,53 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'ryanolsonx/vim-lsp-python'
 call plug#end()
 
-" Global configs.
-
+"
+" General Settings
+"
 filetype plugin indent on
 syntax on
-
 set backspace=indent,eol,start
-
 set nocompatible
 set number
 set incsearch
 set hlsearch
 set ruler
 
-" map keys for vim-lsp commands
-" Show pep8 document diagnostics
-map <F8> :LspDocumentDiagnostics <CR>
-" Go to :q
 "
-" Run this vimrc
-map <F5> :source ~/.vimrc <CR>
+" netrw file explorer config
+"
+let g:netrw_winsize = -28                  " absolute width of netrw window
+let g:netrw_banner = 0                     " do not display info on the top of window
+let g:netrw_liststyle = 3                  " tree-view
+let g:netrw_sort_sequence = '[\/]$,*'      " sort is affecting only: directories on the top, files below
+let g:netrw_browse_split = 4               " use the previous window to open file
 
-" File explorer
-" absolute width of netrw window
-let g:netrw_winsize = -28
+"
+" Map Leader Key
+"
+nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
 
-" do not display info on the top of window
-let g:netrw_banner = 0
+"
+" Map general keys
+"
+noremap <F3> :Lexplore <CR>                " Map a key for file explorer
+noremap <F5> :source ~/.vimrc <CR>         " Run this vimrc - Refresh
 
-" tree-view
-let g:netrw_liststyle = 3
+"
+" Map keys for vim-lsp commands
+"
+noremap <F8> :LspDocumentDiagnostics <CR>  " Show pep8 document diagnostics
+noremap <Leader><F2> :LspDeclaration <CR>  " Go to Declaration <Shift> + <F2>
+noremap <F2> :LspDefinition <CR>           " Go to Declaration <Shift> + <F2>
+noremap <Leader><Leader> :LspHover <CR>    " Show hover information
+noremap <F7> :LspNextReference <CR>        " Jump to the next reference of the symbol under table
+noremap <F6> :LspPreviousReference <CR>    " Jump to the previous reference of the symbol under table
+noremap <F9> :LspReferences <CR>           " Find all references
 
-" sort is affecting only: directories on the top, files below
-let g:netrw_sort_sequence = '[\/]$,*'
-
-" use the previous window to open file
-let g:netrw_browse_split = 4
-
-" Map a key for file explorer
-map <F3> :Lexplore <CR>
-
-
+"
 " Language specific configs.
+"
 autocmd Filetype python colorscheme industry
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
