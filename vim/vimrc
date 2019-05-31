@@ -24,11 +24,11 @@ set ruler
 "
 " netrw file explorer config
 "
-let g:netrw_winsize = -28                  " absolute width of netrw window
-let g:netrw_banner = 0                     " do not display info on the top of window
-let g:netrw_liststyle = 3                  " tree-view
-let g:netrw_sort_sequence = '[\/]$,*'      " sort is affecting only: directories on the top, files below
-let g:netrw_browse_split = 4               " use the previous window to open file
+let g:netrw_winsize = -28                  	" absolute width of netrw window
+let g:netrw_banner = 0                     	" do not display info on the top of window
+let g:netrw_liststyle = 3                  	" tree-view
+let g:netrw_sort_sequence = '[\/]$,*'      	" sort is affecting only: directories on the top, files below
+let g:netrw_browse_split = 4               	" use the previous window to open file
 
 "
 " Map Leader Key
@@ -39,19 +39,21 @@ let mapleader = "\<Space>"
 "
 " Map general keys
 "
-noremap <F3> :Lexplore <CR>                " Map a key for file explorer
-noremap <F5> :source ~/.vimrc <CR>         " Run this vimrc - Refresh
-noremap <Leader>h :set cursorline! <CR>    " Toggle highlight cursor line
+noremap <F3> :Lexplore <CR>                	" Map a key for file explorer
+noremap <F5> :source ~/.vimrc <CR>         	" Run this vimrc - Refresh
+noremap <Leader>h :set cursorline! <CR>    	" Toggle highlight cursor line
+noremap <Leader>j :%!python -m json.tool <CR> 	" Prettify json
+
 "
 " Map keys for vim-lsp commands
 "
-noremap <F8> :LspDocumentDiagnostics <CR>  " Show pep8 document diagnostics
-noremap <Leader><F2> :LspDeclaration <CR>  " Go to Declaration <Shift> + <F2>
-noremap <F2> :LspDefinition <CR>           " Go to Declaration <Shift> + <F2>
-noremap <Leader><Leader> :LspHover <CR>    " Show hover information
-noremap <F7> :LspNextReference <CR>        " Jump to the next reference of the symbol under table
-noremap <F6> :LspPreviousReference <CR>    " Jump to the previous reference of the symbol under table
-noremap <F9> :LspReferences <CR>           " Find all references
+noremap <F8> :LspDocumentDiagnostics <CR>  	" Show pep8 document diagnostics
+noremap <Leader><F2> :LspDeclaration <CR>  	" Go to Declaration <Shift> + <F2>
+noremap <F2> :LspDefinition <CR>           	" Go to Declaration <Shift> + <F2>
+noremap <Leader><Leader> :LspHover <CR>    	" Show hover information
+noremap <F7> :LspNextReference <CR>        	" Jump to the next reference of the symbol under table
+noremap <F6> :LspPreviousReference <CR>    	" Jump to the previous reference of the symbol under table
+noremap <F9> :LspReferences <CR>           	" Find all references
 
 "
 " Language specific configs.
