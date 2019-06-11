@@ -1,7 +1,7 @@
 "
 "Highlight trailing white spaces
 "
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
 "
