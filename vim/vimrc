@@ -1,4 +1,10 @@
 "
+"Highlight trailing white spaces
+"
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+
+"
 " List of Plugins for vim-plug
 "
 call plug#begin('~/.vim/plugged')
@@ -43,7 +49,7 @@ noremap <F3> :Lexplore <CR>                	" Map a key for file explorer
 noremap <F5> :source ~/.vimrc <CR>         	" Run this vimrc - Refresh
 noremap <Leader>h :set cursorline! <CR>    	" Toggle highlight cursor line
 noremap <Leader>j :%!python -m json.tool <CR> 	" Prettify json
-
+noremap <Leader><BACKSPACE> :%s/\s\+$//e <CR>   " Remove trailing space
 "
 " Map keys for vim-lsp commands
 "
@@ -67,3 +73,5 @@ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 highlight LineNr term=NONE cterm=NONE ctermbg=NONE ctermfg=grey guibg=NONE guifg=Grey
 highlight CursorLine term=NONE cterm=NONE ctermbg=NONE ctermfg=None guibg=NONE guifg=NONE 
 highlight CursorLineNr term=bold cterm=bold ctermbg=grey ctermfg=black guibg=Yellow guifg=black 
+
+
