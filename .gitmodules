@@ -1,3 +1,6 @@
 [submodule "nvim/plugins/start/lualine.nvim"]
 	path = nvim/plugins/start/lualine.nvim
 	url = https://github.com/nvim-lualine/lualine.nvim
+[submodule "nvim/plugins/start/nvim-tree.lua"]
+	path = nvim/plugins/start/nvim-tree.lua
+	url = git@github.com:kyazdani42/nvim-tree.lua.git
