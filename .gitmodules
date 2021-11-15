@@ -4,3 +4,6 @@
 [submodule "nvim/plugins/start/nvim-tree.lua"]
 	path = nvim/plugins/start/nvim-tree.lua
 	url = git@github.com:kyazdani42/nvim-tree.lua.git
+[submodule "nvim/plugins/start/nvim-treesitter"]
+	path = nvim/plugins/start/nvim-treesitter
+	url = git@github.com:nvim-treesitter/nvim-treesitter.git
