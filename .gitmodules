@@ -7,3 +7,6 @@
 [submodule "nvim/plugins/start/nvim-treesitter"]
 	path = nvim/plugins/start/nvim-treesitter
 	url = git@github.com:nvim-treesitter/nvim-treesitter.git
+[submodule "nvim/plugins/start/nightfox.nvim"]
+	path = nvim/plugins/start/nightfox.nvim
+	url = git@github.com:EdenEast/nightfox.nvim.git
