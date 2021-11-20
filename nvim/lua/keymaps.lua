@@ -11,7 +11,7 @@ end
 keymap('', '<Space>', '<Nop>')
 vim.g.mapleader = ' '
 
-keymap('', '<F3>', ':NvimTreeToggle<CR>')
+keymap('', '<F3>', ':NvimTreeToggle<CR>:NvimTreeRefresh<CR>')
 
 keymap('n', '<Leader><Backspace>', [[ :%s/\s\+$//e <CR> ]])   -- Remove trailing space
 
