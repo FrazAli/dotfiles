@@ -19,9 +19,10 @@ nightfox.setup({
   },
   hlgroups = {
     TSPunctDelimiter = { fg = "${red}" }, -- Override a highlight group with the color red
-    LspCodeLens = { bg = "#000000", style = "italic" },
+    -- LspCodeLens = { bg = "#000000", style = "italic" },
+    NvimTreeNormal = { fg = "fg_sidebar", bg = "NONE" }
   }
-})
+ })
 
 -- Load the configuration set above and apply the colorscheme
 nightfox.load()
