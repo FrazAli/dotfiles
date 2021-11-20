@@ -10,3 +10,6 @@
 [submodule "nvim/plugins/start/nightfox.nvim"]
 	path = nvim/plugins/start/nightfox.nvim
 	url = git@github.com:EdenEast/nightfox.nvim.git
+[submodule "nvim/plugins/start/nvim-web-devicons"]
+	path = nvim/plugins/start/nvim-web-devicons
+	url = git@github.com:kyazdani42/nvim-web-devicons.git
