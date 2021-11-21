@@ -11,6 +11,8 @@ require('nvim-tree').setup()
 require('nvim-treesitter').setup()
 require('nvim-web-devicons').setup()
 require('plenary')
+require('lspconfig')
+require('cmp')
 
 -- Plugins with config.
 require('plugins/telescope')
