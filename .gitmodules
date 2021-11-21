@@ -13,3 +13,12 @@
 [submodule "nvim/plugins/start/nvim-web-devicons"]
 	path = nvim/plugins/start/nvim-web-devicons
 	url = git@github.com:kyazdani42/nvim-web-devicons.git
+[submodule "nvim/plugins/start/telescope.nvim"]
+	path = nvim/plugins/start/telescope.nvim
+	url = git@github.com:nvim-telescope/telescope.nvim.git
+[submodule "nvim/plugins/start/telescope-fzf-native.nvim"]
+	path = nvim/plugins/start/telescope-fzf-native.nvim
+	url = git@github.com:nvim-telescope/telescope-fzf-native.nvim.git
+[submodule "nvim/plugins/start/plenary.nvim"]
+	path = nvim/plugins/start/plenary.nvim
+	url = git@github.com:nvim-lua/plenary.nvim.git
