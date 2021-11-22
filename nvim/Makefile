@@ -3,7 +3,7 @@ OS := $(shell uname)
 CONF_DIR ?= $(HOME)/.config/nvim
 PLUGINS_DIR ?= $(HOME)/.local/share/nvim/site/pack/plugins
 
-all: nvim-config
+all: nvim-prereqs nvim-config
 	@true
 
 nvim-dirs:
@@ -24,7 +24,7 @@ else
 endif
 
 .PHONY: neovim-config
-nvim-config: nvim-dirs nvim-prereqs
+nvim-config: nvim-dirs
 	@cp init.lua ${CONF_DIR}
 	@rsync -auv --force --delete ./lua/* ${CONF_DIR}/lua
 	@rsync -auv --force ./plugins/* ${PLUGINS_DIR}
