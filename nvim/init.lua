@@ -7,7 +7,6 @@ require('settings')
 
 -- Plugins
 require('lualine').setup()
-require('nvim-tree').setup()
 require('nvim-treesitter').setup()
 require('nvim-web-devicons').setup()
 require('plenary')
@@ -16,3 +15,4 @@ require('cmp')
 
 -- Plugins with config.
 require('plugins/telescope')
+require('plugins/nvim-tree')
