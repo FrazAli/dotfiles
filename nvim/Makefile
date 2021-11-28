@@ -4,6 +4,7 @@ CONF_DIR ?= $(HOME)/.config/nvim
 PLUGINS_DIR ?= $(HOME)/.local/share/nvim/site/pack/plugins
 
 all: nvim-prereqs nvim-config
+all: nvim-prereqs nvim-config nvim-plugin-fzf
 	@true
 
 nvim-dirs:
@@ -29,3 +30,6 @@ nvim-config: nvim-dirs
 	@rsync -auv --force --delete ./lua/* ${CONF_DIR}/lua
 	@rsync -auv --force ./plugins/* ${PLUGINS_DIR}
 
+.PHONY: nvim-plugin-fzf
+nvim-plugin-fzf: nvim-config
+	@$(MAKE) -C ${PLUGINS_DIR}/start/telescope-fzf-native.nvim/
