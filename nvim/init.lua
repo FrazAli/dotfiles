@@ -5,7 +5,7 @@ require('themes/nightfox')
 require('keymaps')
 require('settings')
 
--- Plugins
+-- Plugins with default or no config.
 require('lualine').setup()
 require('nvim-treesitter').setup()
 require('nvim-web-devicons').setup()
@@ -13,6 +13,6 @@ require('plenary')
 require('lspconfig')
 require('cmp')
 
--- Plugins with config.
+-- Plugins with custom config.
 require('plugins/telescope')
 require('plugins/nvim-tree')
