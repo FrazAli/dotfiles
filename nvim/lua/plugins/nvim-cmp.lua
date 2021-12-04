@@ -1,4 +1,31 @@
--- Setup nvim-cmp.
+local kind_icons = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "ﴯ",
+  Interface = "",
+  Module = "",
+  Property = "ﰠ",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = ""
+}
+
 local cmp = require'cmp'
 
 cmp.setup({
@@ -34,7 +61,23 @@ cmp.setup({
     { name = 'treesitter' },   -- Source for treesitter completions.
     { name = 'nvim_lua' },     -- Source for lua completions.
     { name = 'spell' }         -- Source for spelling completions.
-  })
+  }),
+  formatting = {
+    format = function(entry, vim_item)
+      -- Kind icons
+      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      -- Source
+      vim_item.menu = ({
+        buffer = "﬘",
+        nvim_lsp = "ﲳ",
+	treesitter = "",
+	spell = "暈",
+        luasnip = "",
+        nvim_lua = "",
+      })[entry.source.name]
+      return vim_item
+    end,
+    }
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
