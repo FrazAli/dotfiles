@@ -9,5 +9,5 @@ vim.wo.numberwidth = 4
 -- vim.wo.signcolumn = number
 
 -- Enable completion pop ups
-vim.o.completeopt="menu,menuone,noinsert,noselect"
+vim.o.completeopt="menu,menuone,preview,noinsert,noselect"
 
