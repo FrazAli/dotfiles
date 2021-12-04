@@ -10,9 +10,10 @@ require('lualine').setup()
 require('nvim-treesitter').setup()
 require('nvim-web-devicons').setup()
 require('plenary')
-require('lspconfig')
-require('cmp')
 
 -- Plugins with custom config.
 require('plugins/telescope')
 require('plugins/nvim-tree')
+
+-- Code Completion
+require('plugins/nvim-cmp')

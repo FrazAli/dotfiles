@@ -28,3 +28,15 @@
 [submodule "nvim/plugins/start/nvim-cmp"]
 	path = nvim/plugins/start/nvim-cmp
 	url = git@github.com:hrsh7th/nvim-cmp.git
+[submodule "nvim/plugins/start/cmp-nvim-lsp"]
+	path = nvim/plugins/start/cmp-nvim-lsp
+	url = git@github.com:hrsh7th/cmp-nvim-lsp.git
+[submodule "nvim/plugins/start/cmp-buffer"]
+	path = nvim/plugins/start/cmp-buffer
+	url = git@github.com:hrsh7th/cmp-buffer.git
+[submodule "nvim/plugins/start/cmp-path"]
+	path = nvim/plugins/start/cmp-path
+	url = git@github.com:hrsh7th/cmp-path.git
+[submodule "nvim/plugins/start/cmp-nvim-lua"]
+	path = nvim/plugins/start/cmp-nvim-lua
+	url = git@github.com:hrsh7th/cmp-nvim-lua.git

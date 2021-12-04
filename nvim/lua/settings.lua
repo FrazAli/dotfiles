@@ -8,3 +8,6 @@ vim.wo.relativenumber = true
 vim.wo.numberwidth = 4
 -- vim.wo.signcolumn = number
 
+-- Enable completion pop ups
+vim.o.completeopt="menu,menuone,noinsert,noselect"
+
