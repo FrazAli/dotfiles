@@ -20,7 +20,7 @@ vim.o.cursorline = true       -- Highlight cursol line
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.numberwidth = 4
-vim.wo.signcolumn = 'number'  -- Column to show signs e.g. for lsp and diagnostics
+vim.wo.signcolumn = 'yes'     -- Column to show signs e.g. for lsp and diagnostics
 
 -- Tab and indentation
 vim.o.expandtab = true
