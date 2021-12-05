@@ -7,13 +7,13 @@ require('settings')
 
 -- Plugins with default or no config.
 require('lualine').setup()
-require('nvim-treesitter').setup()
 require('nvim-web-devicons').setup()
 require('plenary')
 
--- Plugins with custom config.
+-- Config. for plugins
 require('plugins/telescope')
 require('plugins/nvim-tree')
+require('plugins/nvim-treesitter')
 
 -- Code Completion
 require('plugins/nvim-cmp')
