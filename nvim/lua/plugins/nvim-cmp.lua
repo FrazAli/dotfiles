@@ -77,7 +77,11 @@ cmp.setup({
       })[entry.source.name]
       return vim_item
     end,
-    }
+    },
+    experimental = {
+      native_menu = true,
+      ghost_text = false,
+    },
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
