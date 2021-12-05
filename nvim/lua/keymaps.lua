@@ -13,6 +13,8 @@ vim.g.mapleader = ' '
 
 keymap('', '<F3>', ':NvimTreeToggle<CR>:NvimTreeRefresh<CR>')
 
-keymap('n', '<Leader><Backspace>', [[ :%s/\s\+$//e <CR> ]])   -- Remove trailing space
+-- Remove trailing space
+keymap('n', '<Leader><Backspace>', [[ :%s/\s\+$//e <CR> ]])
 
-
+-- Open terminal in a split
+keymap('n', '<Leader>t', ":sp<CR> :term<CR> :resize 20N<CR> i")
