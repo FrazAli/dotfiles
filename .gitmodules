@@ -43,3 +43,6 @@
 [submodule "nvim/plugins/start/LuaSnip"]
 	path = nvim/plugins/start/LuaSnip
 	url = git@github.com:L3MON4D3/LuaSnip.git
+[submodule "nvim/plugins/start/lsp_signature.nvim"]
+	path = nvim/plugins/start/lsp_signature.nvim
+	url = git@github.com:ray-x/lsp_signature.nvim.git

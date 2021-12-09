@@ -17,3 +17,4 @@ require('plugins/nvim-treesitter')
 
 -- Code Completion
 require('plugins/nvim-cmp')
+require('plugins/lsp_signature')
