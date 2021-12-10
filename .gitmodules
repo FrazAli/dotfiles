@@ -46,3 +46,6 @@
 [submodule "nvim/plugins/start/lsp_signature.nvim"]
 	path = nvim/plugins/start/lsp_signature.nvim
 	url = git@github.com:ray-x/lsp_signature.nvim.git
+[submodule "nvim/plugins/start/material.nvim"]
+	path = nvim/plugins/start/material.nvim
+	url = git@github.com:marko-cerovac/material.nvim.git

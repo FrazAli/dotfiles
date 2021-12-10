@@ -1,4 +1,5 @@
 -- Themes
+-- require('themes/material')
 require('themes/nightfox')
 
 -- Settings
