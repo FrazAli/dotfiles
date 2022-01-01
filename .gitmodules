@@ -49,3 +49,6 @@
 [submodule "nvim/plugins/start/material.nvim"]
 	path = nvim/plugins/start/material.nvim
 	url = git@github.com:marko-cerovac/material.nvim.git
+[submodule "nvim/plugins/start/nvim-colorizer.lua"]
+	path = nvim/plugins/start/nvim-colorizer.lua
+	url = git@github.com:norcalli/nvim-colorizer.lua.git

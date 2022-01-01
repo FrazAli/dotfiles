@@ -11,6 +11,7 @@ require('nvim-web-devicons').setup()
 require('plenary')
 
 -- Config. for plugins
+require('plugins/colorizer')
 require('plugins/lualine')
 require('plugins/telescope')
 require('plugins/nvim-tree')
