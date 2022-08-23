@@ -2,6 +2,9 @@
 vim.cmd([[ highlight ExtraWhitespace ctermbg=red guibg=red ]])
 vim.cmd([[ match ExtraWhitespace /\s\+$/ ]])
 
+-- Set theme
+vim.cmd("colorscheme nightfox")
+
 -- General
 vim.o.scrolloff = 3           -- Number of lines offset for scrolling text
 vim.o.errorbells = false      -- System bell on error
