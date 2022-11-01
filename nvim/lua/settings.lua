@@ -38,3 +38,12 @@ vim.o.ignorecase = true
 -- Enable completion pop ups
 vim.o.completeopt="menu,menuone,preview,noinsert,noselect"
 
+-- Set list mode characters
+vim.opt.listchars = {
+  tab = '->',
+  lead = '.',
+  trail = '.',
+  nbsp = '+',
+  eol = '↵',
+}
+
