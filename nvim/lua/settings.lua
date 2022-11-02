@@ -14,10 +14,13 @@ vim.o.showtabline = 2         -- When to show buffer tab line, 2 = always
 vim.o.splitbelow = true       -- Default vertical split
 vim.o.splitright = true       -- Default horizontal split
 vim.o.swapfile = true         -- Enable swap file
-vim.o.wrap = false            -- Wrap text
 vim.o.colorcolumn = '120'     -- Column number to mark for recommended max. line length
 vim.o.cursorline = true       -- Highlight cursol line
 
+-- Text wrap
+vim.o.wrap = true             -- Wrap text
+vim.o.linebreak = true        -- Break line only on characters in 'breakat'
+vim.o.showbreak = '↳'         -- Character to indicate broken line
 
 -- Line numers
 vim.wo.number = true
