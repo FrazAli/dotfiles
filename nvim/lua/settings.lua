@@ -21,7 +21,7 @@ vim.o.cursorline = true       -- Highlight cursol line
 
 -- Line numers
 vim.wo.number = true
-vim.wo.relativenumber = true
+vim.wo.relativenumber = false
 vim.wo.numberwidth = 4
 vim.wo.signcolumn = 'yes'     -- Column to show signs e.g. for lsp and diagnostics
 
