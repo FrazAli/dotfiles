@@ -34,6 +34,7 @@ return {
   },
   enable_tab_bar = false,
   window_background_opacity = 0.7,
+  audible_bell = "Disabled",
 
   -- This changes the default program from cmd.exe to wsl.exe
   -- Note: In order to change the distribution for wsl, set default
