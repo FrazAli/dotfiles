@@ -1,0 +1,15 @@
+# Append the lines below to the existing .zshrc file in the user home directory.
+
+# Set default editor
+export EDITOR=vi
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
+# Enable starship prompt
+eval "$(starship init zsh)"
+
+# Enable terminal colors
+# source1: https://github.com/jesseduffield/lazygit/issues/1625
+# source2: https://www.cyberciti.biz/faq/apple-mac-osx-terminal-color-ls-output-option/
+export TERM=screen-256color-bce
+export CLICOLOR=1
