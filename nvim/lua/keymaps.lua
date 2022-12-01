@@ -18,3 +18,6 @@ keymap('n', '<Leader><Backspace>', [[ :%s/\s\+$//e <CR> ]])
 
 -- Open terminal in a split
 keymap('n', '<Leader>t', ":sp<CR> :term<CR> :resize 20N<CR> i")
+
+-- Open diagnostic hint on current line in a floating window
+keymap('n', '<Leader>h', ':lua vim.diagnostic.open_float()<CR>')
