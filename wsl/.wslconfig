@@ -1,2 +1,4 @@
+# Copy this file on the Windows host e.g. %HOMEPATH%\.wslconfig
+
 [wsl2]
 guiApplications=true
