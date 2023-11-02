@@ -34,3 +34,8 @@ keymap('n', '<Leader>h', ':lua vim.diagnostic.open_float()<CR>')
 nmap('gd', vim.lsp.buf.definition, '[G]oto [D]definition')
 nmap('gi', vim.lsp.buf.definition, '[G]oto [I]mplementation')
 nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+
+-- TODO: Read up on these and keep ones that are useful
+nmap('<Leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+nmap('<Leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+nmap('<Leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orspace [S]ymbols')
