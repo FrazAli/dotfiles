@@ -52,3 +52,9 @@
 [submodule "nvim/plugins/start/nvim-colorizer.lua"]
 	path = nvim/plugins/start/nvim-colorizer.lua
 	url = git@github.com:norcalli/nvim-colorizer.lua.git
+[submodule "nvim/plugins/start/mason.nvim"]
+	path = nvim/plugins/start/mason.nvim
+	url = git@github.com:williamboman/mason.nvim.git
+[submodule "nvim/plugins/start/mason-lspconfig.nvim"]
+	path = nvim/plugins/start/mason-lspconfig.nvim
+	url = git@github.com:williamboman/mason-lspconfig.nvim.git
