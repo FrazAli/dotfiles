@@ -32,6 +32,7 @@ vim.wo.relativenumber = false
 vim.wo.numberwidth = 4
 vim.wo.signcolumn = 'yes'     -- Column to show signs e.g. for lsp and diagnostics
 
+
 -- Tab and indentation
 vim.o.expandtab = true
 vim.o.tabstop = 2
@@ -46,6 +47,7 @@ vim.o.inccommand = 'split'    -- Shows substitute changes in a split popup
 
 -- Enable completion pop ups
 vim.o.completeopt="menu,menuone,preview,noinsert,noselect"
+vim.o.pumblend = 5            -- Popup menu transparency, values: 0-30, 100
 
 -- Set list mode characters
 vim.opt.listchars = {
