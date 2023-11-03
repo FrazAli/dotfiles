@@ -33,7 +33,11 @@ return {
     },
   },
   enable_tab_bar = false,
+
+  -- Background opacity and blur
   window_background_opacity = 0.7,
+  win32_system_backdrop = "Acrylic",
+
   audible_bell = "Disabled",
   font_size = 10.5,
 
