@@ -10,6 +10,7 @@ require('settings')
 require('nvim-ts-autotag').setup()
 require('nvim-autopairs').setup()
 require('nvim-web-devicons').setup()
+require('lspsaga').setup()
 require('plenary')
 
 -- Plugins with custom config.
