@@ -16,9 +16,10 @@ require('plenary')
 -- Plugins with custom config.
 require('plugins/colorizer')
 require('plugins/lualine')
-require('plugins/telescope')
 require('plugins/nvim-tree')
 require('plugins/nvim-treesitter')
+require('plugins/prettier')
+require('plugins/telescope')
 
 -- Code Completion
 require('plugins/nvim-cmp')

@@ -67,3 +67,6 @@
 [submodule "nvim/plugins/start/lspsaga.nvim"]
 	path = nvim/plugins/start/lspsaga.nvim
 	url = git@github.com:nvimdev/lspsaga.nvim.git
+[submodule "nvim/plugins/start/prettier.nvim"]
+	path = nvim/plugins/start/prettier.nvim
+	url = git@github.com:MunifTanjim/prettier.nvim.git
