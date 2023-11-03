@@ -7,10 +7,12 @@ require('keymaps')
 require('settings')
 
 -- Plugins with default or no config.
+require('nvim-ts-autotag').setup()
+require('nvim-autopairs').setup()
 require('nvim-web-devicons').setup()
 require('plenary')
 
--- Config. for plugins
+-- Plugins with custom config.
 require('plugins/colorizer')
 require('plugins/lualine')
 require('plugins/telescope')
