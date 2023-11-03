@@ -13,7 +13,7 @@ vim.cmd("colorscheme nightfox")
 vim.o.scrolloff = 3           -- Number of lines offset for scrolling text
 vim.o.errorbells = false      -- System bell on error
 vim.o.termguicolors = true    -- 24-bit RGB color support
-vim.o.showmode = false        -- Show mode in the command line
+vim.o.showmode = false        -- Show mode in the command line, lualine shows it instead
 vim.o.showtabline = 2         -- When to show buffer tab line, 2 = always
 vim.o.splitbelow = true       -- Default vertical split
 vim.o.splitright = true       -- Default horizontal split
