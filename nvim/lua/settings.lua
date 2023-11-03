@@ -36,6 +36,7 @@ vim.wo.signcolumn = 'yes'     -- Column to show signs e.g. for lsp and diagnosti
 vim.o.expandtab = true
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
+vim.o.breakindent = true      -- wraped lines respect indentation
 
 -- Buffer search and highlight
 vim.o.incsearch = true
