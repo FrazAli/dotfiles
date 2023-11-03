@@ -2,6 +2,10 @@
 vim.cmd([[ highlight ExtraWhitespace ctermbg=red guibg=red ]])
 vim.cmd([[ match ExtraWhitespace /\s\+$/ ]])
 
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
 -- Set theme
 vim.cmd("colorscheme nightfox")
 
