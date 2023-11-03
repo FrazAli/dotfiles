@@ -42,6 +42,7 @@ vim.o.breakindent = true      -- wraped lines respect indentation
 vim.o.incsearch = true
 vim.o.hlsearch = false
 vim.o.ignorecase = true
+vim.o.inccommand = 'split'    -- Shows substitute changes in a split popup
 
 -- Enable completion pop ups
 vim.o.completeopt="menu,menuone,preview,noinsert,noselect"
