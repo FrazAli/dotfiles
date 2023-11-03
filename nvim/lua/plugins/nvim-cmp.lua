@@ -120,10 +120,5 @@ require('lspconfig')['rust_analyzer'].setup {
 
 require('lspconfig')['tsserver'].setup {
   capabilities = capabilities,
-  init_options = {
-        preferences = {
-            disableSuggestions = true
-        }
-    }
 }
 
