@@ -46,7 +46,7 @@ vim.o.ignorecase = true
 vim.o.inccommand = 'split'    -- Shows substitute changes in a split popup
 
 -- Enable completion pop ups
-vim.o.completeopt="menu,menuone,preview,noinsert,noselect"
+-- vim.o.completeopt="menu,menuone,preview,noinsert,noselect"
 vim.o.pumblend = 5            -- Popup menu transparency, values: 0-30, 100
 
 -- Set list mode characters
