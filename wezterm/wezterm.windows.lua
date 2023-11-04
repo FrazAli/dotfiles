@@ -1,7 +1,6 @@
 -- This config. file is for wezterm on Windows OS.
 -- Copy and rename this file into user's home directory, e.g.
 --      C:\Users\[UserName]\.wezterm.lua
-
 return {
   wsl_domains = {
     {
@@ -39,7 +38,22 @@ return {
   win32_system_backdrop = "Acrylic",
 
   audible_bell = "Disabled",
-  font_size = 10.5,
+
+  -- Font properties
+  font_dirs = {
+      "C:\\USERS\\DATORN\\APPDATA\\LOCAL\\MICROSOFT\\WINDOWS\\FONTS",
+      "C:\\USERS\\DATORN\\.LOCAL\\SHARE\\FONTS",
+  },
+
+  font = require('wezterm').font(
+    "SauceCodePro Nerd Font Mono",
+    {
+      weight="Regular",
+      stretch="Normal",
+      style="Normal"
+    }
+  ), -- (AKA: SauceCodePro NFM) C:\USERS\DATORN\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\SAUCECODEPRONERDFONTMONO-REGULAR.TTF, DirectWrite
+  font_size = 14,
 
   -- This changes the default program from cmd.exe to wsl.exe
   -- Note: In order to change the distribution for wsl, set default
