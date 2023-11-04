@@ -4,7 +4,7 @@ local kind_icons = {
   Function = "󰊕",
   Constructor = "",
   Field = "󰜢",
-  Variable = "",
+  Variable = "󰫧",
   Class = "󰠱",
   Interface = "",
   Module = "",
@@ -69,11 +69,11 @@ cmp.setup({
       vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       -- Source
       vim_item.menu = ({
-        buffer = "﬘",
-        nvim_lsp = "ﲳ",
-	treesitter = "",
-	spell = "暈",
-        luasnip = "",
+        buffer = "[buf]﬘",
+        nvim_lsp = "[lsp]",
+        treesitter = "",
+        spell = "󰓆",
+        luasnip = """,
         nvim_lua = "",
       })[entry.source.name]
       return vim_item
