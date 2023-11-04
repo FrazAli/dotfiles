@@ -28,6 +28,7 @@ local kind_icons = {
 
 local cmp = require'cmp'
 
+
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -101,27 +102,4 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
-
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['cssls'].setup {
-  capabilities = capabilities
-}
-
-require('lspconfig')['html'].setup {
-  capabilities = capabilities
-}
-
-require('lspconfig')['pyright'].setup {
-  capabilities = capabilities
-}
-
-require('lspconfig')['rust_analyzer'].setup {
-  capabilities = capabilities
-}
-
-require('lspconfig')['tsserver'].setup {
-  capabilities = capabilities,
-}
 
