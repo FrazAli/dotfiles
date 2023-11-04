@@ -1,6 +1,6 @@
 local kind_icons = {
   Text = "",
-  Method = "",
+  Method = "󰆨",
   Function = "󰊕",
   Constructor = "",
   Field = "󰜢",
@@ -22,7 +22,7 @@ local kind_icons = {
   Constant = "󰏿",
   Struct = "󰙅",
   Event = "",
-  Operator = "󰆕",
+  Operator = "",
   TypeParameter = ""
 }
 
