@@ -52,13 +52,13 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = false }),
   },
   sources = cmp.config.sources({
+    { name = 'luasnip' },                 -- For luasnip users.
+    { name = 'buffer' },                  -- Source for buffer completions.
     { name = 'nvim_lsp' },
     -- { name = 'vsnip' },                -- For vsnip users.
-    { name = 'luasnip' },                 -- For luasnip users.
     -- { name = 'ultisnips' },            -- For ultisnips users.
     -- { name = 'snippy' },               -- For snippy users.
   }, {
-    { name = 'buffer' },                  -- Source for buffer completions.
     { name = 'path' },                    -- Source for path completions.
     { name = 'treesitter' },              -- Source for treesitter completions.
     { name = 'nvim_lua' },                -- Source for lua completions.
@@ -75,7 +75,7 @@ cmp.setup({
         nvim_lsp = "[lsp]",
         treesitter = "",
         spell = "󰓆",
-        luasnip = """,
+        luasnip = "",
         nvim_lua = "",
       })[entry.source.name]
       return vim_item
