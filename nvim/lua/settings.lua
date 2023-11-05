@@ -19,7 +19,11 @@ vim.o.splitbelow = true       -- Default vertical split
 vim.o.splitright = true       -- Default horizontal split
 vim.o.swapfile = true         -- Enable swap file
 vim.o.colorcolumn = '120'     -- Column number to mark for recommended max. line length
-vim.o.cursorline = true       -- Highlight cursol line
+vim.o.cursorline = true       -- Highlight cursor line
+
+-- Spell checking
+vim.o.spelllang = 'en_us'     -- Languages for spell checking
+vim.o.spell = true
 
 -- Text wrap
 vim.o.wrap = true             -- Wrap text
