@@ -70,3 +70,9 @@
 [submodule "nvim/plugins/start/prettier.nvim"]
 	path = nvim/plugins/start/prettier.nvim
 	url = git@github.com:MunifTanjim/prettier.nvim.git
+[submodule "tmux/plugins/tmux-resurrect"]
+	path = tmux/plugins/tmux-resurrect
+	url = git@github.com:tmux-plugins/tmux-resurrect.git
+[submodule "tmux/plugins/tmux-continuum"]
+	path = tmux/plugins/tmux-continuum
+	url = git@github.com:tmux-plugins/tmux-continuum.git
