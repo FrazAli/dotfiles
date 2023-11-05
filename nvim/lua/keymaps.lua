@@ -19,7 +19,7 @@ end
 keymap('', '<Space>', '<Nop>')
 vim.g.mapleader = ' '
 
-keymap('', '<F3>', ':NvimTreeToggle<CR>:NvimTreeRefresh<CR>')
+keymap('', '<F3>', ':NvimTreeFindFileToggle!<CR>')
 
 -- Remove trailing space
 keymap('n', '<Leader><Backspace>', [[ :%s/\s\+$//e <CR> ]])
