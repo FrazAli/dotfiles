@@ -7,7 +7,7 @@ local function keymap(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
---TODO: check if keymap funciton implentaion can be merged with this.
+--TODO: check if keymap function implementation can be merged with this.
 local nmap = function (keys, func, desc)
   if desc then
     desc = 'LSP: ' .. desc
