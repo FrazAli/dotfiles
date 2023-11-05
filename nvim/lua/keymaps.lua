@@ -13,7 +13,7 @@ local nmap = function (keys, func, desc)
     desc = 'LSP: ' .. desc
   end
 
-  vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+  vim.keymap.set('n', keys, func, { desc = desc })
 end
 
 keymap('', '<Space>', '<Nop>')
