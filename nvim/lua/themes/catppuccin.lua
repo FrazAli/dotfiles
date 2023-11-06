@@ -29,7 +29,11 @@ require("catppuccin").setup({
         types = {},
         operators = {},
     },
-    color_overrides = {},
+    color_overrides = {
+      mocha = {
+        base = '#443344',
+      }
+    },
     custom_highlights = {},
     integrations = {
         cmp = true,
