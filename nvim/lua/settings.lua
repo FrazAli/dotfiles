@@ -7,7 +7,7 @@ vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- Set theme
-vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme catppuccin-mocha")
 
 -- General
 vim.o.scrolloff = 3           -- Number of lines offset for scrolling text
