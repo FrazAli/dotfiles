@@ -31,7 +31,7 @@ require("catppuccin").setup({
     },
     color_overrides = {
       mocha = {
-        base = '#443344',
+        base = '#443344', -- slightly less dark than default
       }
     },
     custom_highlights = {},
@@ -48,4 +48,3 @@ require("catppuccin").setup({
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 })
-
