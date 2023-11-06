@@ -79,3 +79,6 @@
 [submodule "nvim/plugins/start/catppuccin"]
 	path = nvim/plugins/start/catppuccin
 	url = git@github.com:catppuccin/nvim.git
+[submodule "nvim/plugins/start/treesitter-playground"]
+	path = nvim/plugins/start/treesitter-playground
+	url = git@github.com:nvim-treesitter/playground.git
