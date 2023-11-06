@@ -1,6 +1,7 @@
 require('lualine').setup {
   options = {
-    -- ... your lualine config
-    theme = "nightfox"
+    icons_enabled = true,
+    component_separators = '|',
+    section_separators = '',
   }
 }
