@@ -1,6 +1,7 @@
 -- Themes
 -- require('themes/material')
-require('themes/nightfox')            -- Dark theme
+-- require('themes/nightfox')            -- Dark theme
+require('themes/catppuccin')           -- Pastel theme
 
 -- Settings
 require('keymaps')                    -- General key maps

@@ -76,3 +76,6 @@
 [submodule "tmux/plugins/tmux-continuum"]
 	path = tmux/plugins/tmux-continuum
 	url = git@github.com:tmux-plugins/tmux-continuum.git
+[submodule "nvim/plugins/start/catppuccin"]
+	path = nvim/plugins/start/catppuccin
+	url = git@github.com:catppuccin/nvim.git
