@@ -1,7 +1,8 @@
 -- Themes
 -- require('themes/material')
 -- require('themes/nightfox')            -- Dark theme
-require('themes/catppuccin')           -- Pastel theme
+require('themes/catppuccin')          -- Pastel theme
+require('themes/kanagawa')            -- Pastel theme based on painting by Katsushika Hokusai
 
 -- Settings
 require('keymaps')                    -- General key maps

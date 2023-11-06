@@ -82,3 +82,6 @@
 [submodule "nvim/plugins/start/treesitter-playground"]
 	path = nvim/plugins/start/treesitter-playground
 	url = git@github.com:nvim-treesitter/playground.git
+[submodule "nvim/plugins/start/kanagawa"]
+	path = nvim/plugins/start/kanagawa
+	url = git@github.com:rebelot/kanagawa.nvim.git
