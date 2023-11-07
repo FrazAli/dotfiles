@@ -32,9 +32,10 @@ return {
     },
   },
   enable_tab_bar = false,
+  color_scheme = 'Catppuccin Mocha',
 
   -- Background opacity and blur
-  window_background_opacity = 0.7,
+  window_background_opacity = 0.6,
   win32_system_backdrop = "Acrylic",
 
   audible_bell = "Disabled",
