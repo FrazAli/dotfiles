@@ -65,6 +65,15 @@ return {
   ), -- C:\USERS\DATORN\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\MESLOLGLNERDFONT-REGULAR.TTF, DirectWrite
   font_size = 15,
 
+  -- Click to open url in the browser
+	mouse_bindings = {
+	  -- Ctrl-click will open the link under the mouse cursor
+	  {
+	    event = { Up = { streak = 1, button = 'Left' } },
+	    mods = 'CTRL',
+	    action = wezterm.action.OpenLinkAtMouseCursor,
+	  },
+	},
   -- This changes the default program from cmd.exe to wsl.exe
   -- Note: In order to change the distribution for wsl, set default
   --       distribution from wsl.exe, example: wsl.exe -s Debian
