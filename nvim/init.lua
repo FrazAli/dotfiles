@@ -17,6 +17,7 @@ require('plenary')                    -- Lua library needed by other plugins e.g
 
 -- Plugins with custom config.
 require('plugins/colorizer')          -- highlights color codes with the color
+require('plugins/gitsigns')           -- Git integration
 require('plugins/lualine')            -- Status line with symbols and theme
 require('plugins/mason')              -- Manages LSP servers and tools
 require('plugins/mason-lspconfig')    -- integrates 'mason' with 'nvim-lspconfig'
