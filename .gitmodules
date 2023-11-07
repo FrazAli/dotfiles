@@ -88,3 +88,6 @@
 [submodule "nvim/plugins/start/codeium"]
 	path = nvim/plugins/start/codeium
 	url = git@github.com:Exafunction/codeium.vim.git
+[submodule "nvim/plugins/start/neorg"]
+	path = nvim/plugins/start/neorg
+	url = git@github.com:nvim-neorg/neorg.git
