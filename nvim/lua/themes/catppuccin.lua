@@ -31,7 +31,7 @@ require("catppuccin").setup({
     },
     color_overrides = {
       mocha = {
-        base = '#443344', -- slightly less dark than default
+        base = '#444444', -- slightly less dark than default
       }
     },
     custom_highlights = {},
