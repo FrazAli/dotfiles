@@ -20,6 +20,7 @@ require('plugins/colorizer')          -- highlights color codes with the color
 require('plugins/lualine')            -- Status line with symbols and theme
 require('plugins/mason')              -- Manages LSP servers and tools
 require('plugins/mason-lspconfig')    -- integrates 'mason' with 'nvim-lspconfig'
+require('plugins/neorg')              -- Neorg for note taking
 require('plugins/nvim-tree')          -- Side menu file browser
 require('plugins/nvim-treesitter')    -- Tree-sitter support for many languages
 require('plugins/prettier')           -- Helps prettify code formatting

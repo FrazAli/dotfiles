@@ -12,6 +12,10 @@ vim.cmd("colorscheme catppuccin-mocha")
 vim.o.pumblend = 0
 -- vim.o.pumblend = 5            -- Pop-up menu transparency, values: 0-30, 100
 
+-- Need these for Nerog, TODO: Investigate why ?
+vim.wo.foldlevel = 99
+vim.wo.conceallevel = 2
+
 -- General
 vim.o.scrolloff = 3           -- Number of lines offset for scrolling text
 vim.o.errorbells = false      -- System bell on error
