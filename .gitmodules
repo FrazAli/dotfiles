@@ -94,3 +94,6 @@
 [submodule "nvim/plugins/start/gitsigns"]
 	path = nvim/plugins/start/gitsigns
 	url = git@github.com:lewis6991/gitsigns.nvim.git
+[submodule "nvim/plugins/start/hologram"]
+	path = nvim/plugins/start/hologram
+	url = git@github.com:edluffy/hologram.nvim.git
