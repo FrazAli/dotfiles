@@ -97,3 +97,6 @@
 [submodule "nvim/plugins/start/hologram"]
 	path = nvim/plugins/start/hologram
 	url = git@github.com:edluffy/hologram.nvim.git
+[submodule "nvim/plugins/start/image.nvim"]
+	path = nvim/plugins/start/image.nvim
+	url = git@github.com:samodostal/image.nvim.git
