@@ -15,8 +15,12 @@ nvim-dirs:
 .PHONY: prereqs
 nvim-prereqs:
 ifeq (${OS}, Linux)
+	@echo 'deb [trusted=yes] https://apt.fury.io/ascii-image-converter/ /' | sudo tee /etc/apt/sources.list.d/ascii-image-converter.list
 	@sudo apt-get update
 	@sudo apt-get install --yes ripgrep fd-find rsync
+	@echo "Installing ascii-image-converter ..."
+	@sudo apt-get install --yes ascii-image-converter
+	@sudo rm /etc/apt/sources.list.d/ascii-image-converter.list
 else ifeq (${OS}, Darwin)
 	@brew update
 	@brew install ripgrep fd rsync
