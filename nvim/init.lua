@@ -17,6 +17,7 @@ require('plenary')                    -- Lua library needed by other plugins e.g
 
 -- Plugins with custom config.
 require('plugins/colorizer')          -- highlights color codes with the color
+require('plugins/conform')            -- Auto-format on save
 require('plugins/gitsigns')           -- Git integration
 require('plugins/hologram')           -- Markdown image preview
 require('plugins/image')              -- Ascii image preview

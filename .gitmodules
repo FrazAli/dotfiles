@@ -100,3 +100,6 @@
 [submodule "nvim/plugins/start/image.nvim"]
 	path = nvim/plugins/start/image.nvim
 	url = git@github.com:samodostal/image.nvim.git
+[submodule "nvim/plugins/start/conform"]
+	path = nvim/plugins/start/conform
+	url = git@github.com:stevearc/conform.nvim.git
