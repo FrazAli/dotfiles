@@ -41,3 +41,7 @@ require("lspconfig")["rust_analyzer"].setup({
 require("lspconfig")["tsserver"].setup({
 	capabilities = capabilities,
 })
+
+require("lspconfig")["emmet_language_server"].setup({
+	capabilities = capabilities,
+})
