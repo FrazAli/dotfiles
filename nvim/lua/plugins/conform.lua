@@ -15,6 +15,7 @@ require("conform").setup({
 	},
 	format_on_save = {
 		-- These options will be passed to conform.format()
+		async = false, -- setting this true means the timeout has no effect
 		timeout_ms = 500, -- formatting timeout for sync formatting
 		lsp_fallback = true, -- fallback to LSP if there is no Formatter
 	},
