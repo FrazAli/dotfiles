@@ -29,6 +29,7 @@ require("nvim-treesitter.configs").setup({
 		"python",
 		"query",
 		"rust",
+		"terraform",
 		"tsx",
 		"typescript",
 		"vim",

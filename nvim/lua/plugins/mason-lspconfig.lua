@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
 		"pyright",
 		"rust_analyzer",
 		"tsserver",
+		"terraformls",
 	},
 	automatic_installation = true,
 })
