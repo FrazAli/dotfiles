@@ -22,6 +22,19 @@ require("lspconfig")["cssls"].setup({
 
 require("lspconfig")["gopls"].setup({
 	capabilities = capabilities,
+	cmd = { "gopls" },
+	filetypes = { "go", "gomod", "gowork", "gotmpl" },
+	root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
+	settings = {
+		gopls = {
+			completeUnimported = true, -- complete unimported packages
+			usePlaceholders = true, -- use placeholders when completing
+			gofumpt = true, -- use gofumpt
+			analyses = {
+				unusedparams = true, -- warn about unused parameters
+			},
+		},
+	},
 })
 
 require("lspconfig")["html"].setup({
