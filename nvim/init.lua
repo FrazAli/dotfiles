@@ -9,8 +9,8 @@ require("keymaps") -- General key maps
 require("settings") -- Editor settings
 
 -- Plugins with default or no config.
-require("nvim-ts-autotag").setup() -- Auto-tags HTML using 'nvim-treesitter'
 require("nvim-autopairs").setup() -- Auto-pairs braces / brackets and more
+require("nvim-ts-autotag").setup() -- Auto-tags HTML using 'nvim-treesitter'
 require("nvim-web-devicons").setup() -- Installs Nerd font symbols and icons
 require("lspsaga").setup() -- LSP completion front-end
 require("plenary") -- Lua library needed by other plugins e.g. telescope
