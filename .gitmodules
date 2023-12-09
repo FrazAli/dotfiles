@@ -106,3 +106,6 @@
 [submodule "nvim/plugins/start/color-picker"]
 	path = nvim/plugins/start/color-picker
 	url = git@github.com:ziontee113/color-picker.nvim.git
+[submodule "nvim/plugins/start/nvim-highlight-colors"]
+	path = nvim/plugins/start/nvim-highlight-colors
+	url = git@github.com:brenoprata10/nvim-highlight-colors.git
