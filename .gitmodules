@@ -103,3 +103,6 @@
 [submodule "nvim/plugins/start/conform"]
 	path = nvim/plugins/start/conform
 	url = git@github.com:stevearc/conform.nvim.git
+[submodule "nvim/plugins/start/color-picker"]
+	path = nvim/plugins/start/color-picker
+	url = git@github.com:ziontee113/color-picker.nvim.git
