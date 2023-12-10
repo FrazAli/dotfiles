@@ -1,8 +1,9 @@
--- Plugin Manager
-require("plugins/lazy")
 -- -- Settings
 require("keymaps") -- General key maps
 require("settings") -- Editor settings
+
+-- Plugin Manager
+require("plugins/lazy")
 -- -- Themes
 -- -- require('themes/material')
 -- -- require('themes/nightfox')            -- Dark theme

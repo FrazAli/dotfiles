@@ -12,13 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000, -- colorscheme loads before eveything else
-		config = function()
-			vim.cmd([[ colorscheme catppuccin-mocha ]])
-		end,
-	},
-
+  { import = "plugins.specs.themes" },
+  { import = "plugins.specs" }
 })
