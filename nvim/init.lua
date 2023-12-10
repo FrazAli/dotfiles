@@ -1,14 +1,14 @@
 -- Plugin Manager
 require("plugins/lazy")
+-- -- Settings
+require("keymaps") -- General key maps
+require("settings") -- Editor settings
 -- -- Themes
 -- -- require('themes/material')
 -- -- require('themes/nightfox')            -- Dark theme
 -- require("themes/catppuccin") -- Pastel theme
 -- -- require('themes/kanagawa')            -- Pastel theme based on painting by Katsushika Hokusai
 --
--- -- Settings
--- require("keymaps") -- General key maps
--- require("settings") -- Editor settings
 --
 -- -- Plugins with default or no config.
 -- require("nvim-autopairs").setup() -- Auto-pairs braces / brackets and more
