@@ -55,6 +55,9 @@ vim.o.hlsearch = false
 vim.o.ignorecase = true
 vim.o.inccommand = "split" -- Shows substitute changes in a split pop-up
 
+-- Clipboard
+vim.o.clipboard = "unnamedplus" -- Use system clipboard
+
 -- Enable completion pop ups
 -- vim.o.completeopt="menu,menuone,preview,noinsert,noselect"
 
