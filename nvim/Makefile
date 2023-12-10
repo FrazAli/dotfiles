@@ -33,7 +33,7 @@ endif
 nvim-config: nvim-dirs
 	@cp init.lua ${CONF_DIR}
 	@rsync -auv --force --delete ./lua/* ${CONF_DIR}/lua
-	@rsync -auv --force ./plugins/* ${PLUGINS_DIR}
+	# @rsync -auv --force ./plugins/* ${PLUGINS_DIR}
 
 .PHONY: nvim-plugin-fzf
 nvim-plugin-fzf: nvim-config
