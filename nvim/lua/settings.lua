@@ -37,9 +37,9 @@ vim.o.wrap = true -- Wrap text
 vim.o.linebreak = true -- Break line only on characters in 'breakat'
 vim.o.showbreak = "↳" -- Character to indicate broken line
 
--- Line numbers
+-- Line numbers in gutter
 vim.wo.number = true
-vim.wo.relativenumber = false
+vim.wo.relativenumber = true
 vim.wo.numberwidth = 4
 vim.wo.signcolumn = "yes" -- Column to show signs e.g. For LSP and diagnostics
 
