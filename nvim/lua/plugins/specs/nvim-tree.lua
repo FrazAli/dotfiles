@@ -27,8 +27,9 @@ return {
     })
 
     -- keymaps
-    vim.keymap.set("", "<F3>", ":NvimTreeToggle<CR>")
-    vim.keymap.set("", "<leader><F3>", ":NvimTreeFindFileToggle!<CR>")
-    vim.keymap.set("", "<F5>", ":NvimTreeRefresh<CR>")
+    local keymap = vim.keymap
+    keymap.set("n", "<F3>", ":NvimTreeToggle<CR>")
+    keymap.set("n", "<leader><F3>", ":NvimTreeFindFileToggle!<CR>")
+    keymap.set("n", "<F5>", ":NvimTreeRefresh<CR>")
   end
 }
