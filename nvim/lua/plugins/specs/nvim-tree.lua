@@ -25,5 +25,10 @@ return {
         },
       },
     })
+
+    -- keymaps
+    vim.keymap.set("", "<F3>", ":NvimTreeToggle<CR>")
+    vim.keymap.set("", "<leader><F3>", ":NvimTreeFindFileToggle!<CR>")
+    vim.keymap.set("", "<F5>", ":NvimTreeRefresh<CR>")
   end
 }

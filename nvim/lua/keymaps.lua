@@ -19,7 +19,6 @@ end
 keymap("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 
--- keymap("", "<F3>", ":NvimTreeFindFileToggle!<CR>")
 
 -- Remove trailing space
 keymap("n", "<Leader><Backspace>", [[ :%s/\s\+$//e <CR> ]])
@@ -33,13 +32,13 @@ keymap("n", "<Leader>t", ":sp<CR> :term<CR> :resize 20N<CR> i")
 -- nmap("gd", vim.lsp.buf.definition, "[G]oto [D]definition")
 -- nmap("gi", vim.lsp.buf.definition, "[G]oto [I]mplementation")
 -- nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
--- 
+--
 -- -- LSP Saga
 -- keymap("n", "<C-j>", "<Cmd>Lspsaga diagnostic_jump_next<cr>")
 -- keymap("n", "<C-k>", "<Cmd>Lspsaga diagnostic_jump_prev<cr>")
 -- keymap("n", "<C-h>", "<Cmd>Lspsaga show_cursor_diagnostics<cr>")
 -- keymap("n", "<C-s>", "<Cmd>Lspsaga hover_doc<cr>")
--- 
+--
 -- -- TODO: Read up on these and keep ones that are useful
 -- nmap("<Leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
 -- nmap("<Leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
