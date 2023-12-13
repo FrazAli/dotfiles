@@ -3,7 +3,7 @@ require("keymaps") -- General key maps
 require("settings") -- Editor settings
 
 -- Plugin Manager
-require("plugins/lazy")
+require("plugins/manager/lazy")
 -- -- Themes
 -- -- require('themes/material')
 -- -- require('themes/nightfox')            -- Dark theme
