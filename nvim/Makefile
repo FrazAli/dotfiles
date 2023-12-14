@@ -25,6 +25,6 @@ else
 endif
 
 .PHONY: nvim-config
-nvim-config: nvim-dirs
+nvim-config:
 	@cp init.lua ${CONF_DIR}
 	@rsync -auv --force --delete ./lua/* ${CONF_DIR}/lua
