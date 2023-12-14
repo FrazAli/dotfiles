@@ -1,5 +1,6 @@
 return {
 	"samodostal/image.nvim",
+	dependencies = { "nvim-lua/plenary.nvim" },
 	event = { "BufReadPre" },
 	config = function()
 		require("image").setup({
