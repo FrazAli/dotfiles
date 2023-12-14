@@ -1,86 +1,85 @@
-require("nvim-treesitter.configs").setup({
-	playground = {
-		enable = true,
-		disable = {},
-		updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-		persist_queries = false, -- Whether the query persists across vim sessions
-		keybindings = {
-			toggle_query_editor = "o",
-			toggle_hl_groups = "i",
-			toggle_injected_languages = "t",
-			toggle_anonymous_nodes = "a",
-			toggle_language_display = "I",
-			focus_language = "f",
-			unfocus_language = "F",
-			update = "R",
-			goto_node = "<cr>",
-			show_help = "?",
+return {
+	{
+		"nvim-treesitter/nvim-treesitter",
+		event = { "BufReadPre", "BufNewFile" },
+		build = ":TSUpdate",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			"windwp/nvim-ts-autotag",
 		},
-	},
+		config = function()
+			-- import nvim-treesitter plugin
+			local treesitter = require("nvim-treesitter.configs")
 
-	-- A list of parser names, or "all" (the five listed parsers should always be installed)
-	ensure_installed = {
-		"c",
-		"css",
-		"go",
-		"html",
-		"javascript",
-		"json",
-		"lua",
-		"python",
-		"query",
-		"rust",
-		"terraform",
-		"tsx",
-		"typescript",
-		"vim",
-		"vimdoc",
-	},
+			-- configure treesitter
+			treesitter.setup({ -- enable syntax highlighting
+				highlight = {
+					enable = true,
+				},
+				-- enable indentation
+				indent = {
+					enable = true,
+				},
+				-- enable autotagging (w/ nvim-ts-autotag plugin)
+				autotag = {
+					enable = true,
+				},
+				-- ensure these language parsers are installed
+				ensure_installed = {
+					"bash",
+					"c",
+					"css",
+					"dockerfile",
+					"gitignore",
+					"go",
+					"html",
+					"javascript",
+					"json",
+					"lua",
+					"markdown",
+					"markdown_inline",
+					"python",
+					"query",
+					"rust",
+					"svelte",
+					"terraform",
+					"tsx",
+					"typescript",
+					"vim",
+					"vimdoc",
+					"yaml",
+				},
+				incremental_selection = {
+					enable = true,
+					keymaps = {
+						init_selection = "<C-space>",
+						node_incremental = "<C-space>",
+						scope_incremental = false,
+						node_decremental = "<bs>",
+					},
+				},
+				playground = {
+					enable = true,
+					disable = {},
+					updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+					persist_queries = false, -- Whether the query persists across vim sessions
+					keybindings = {
+						toggle_query_editor = "o",
+						toggle_hl_groups = "i",
+						toggle_injected_languages = "t",
+						toggle_anonymous_nodes = "a",
+						toggle_language_display = "I",
+						focus_language = "f",
+						unfocus_language = "F",
+						update = "R",
+						goto_node = "<cr>",
+						show_help = "?",
+					},
+				},
+			})
 
-	-- Install parsers synchronously (only applied to `ensure_installed`)
-	sync_install = false,
-
-	-- Automatically install missing parsers when entering buffer
-	-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-	auto_install = true,
-
-	-- List of parsers to ignore installing (or "all")
-	ignore_install = { "javascript" },
-
-	---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-	-- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
-	highlight = {
-		enable = true,
-
-		-- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-		-- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-		-- the name of the parser)
-		-- list of language that will be disabled
-		-- disable = { "c", "rust" },
-		-- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-		disable = function(lang, buf)
-			local max_filesize = 100 * 1024 -- 100 KB
-			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-			if ok and stats and stats.size > max_filesize then
-				return true
-			end
+			-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
+			-- require('ts_context_commentstring').setup {}
 		end,
-
-		-- Indentation based of TS for '=' operator
-		indent = {
-			enable = true,
-			disable = {},
-		},
-
-		autotag = {
-			enable = true,
-		},
-
-		-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-		-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-		-- Using this option may slow down your editor, and you may see some duplicate highlights.
-		-- Instead of true it can also be a list of languages
-		additional_vim_regex_highlighting = false,
 	},
-})
+}
