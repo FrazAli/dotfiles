@@ -41,6 +41,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
+				{ name = "codeium" }, -- Codeium AI coding assistant
 				{ name = "path" }, -- file system paths
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
