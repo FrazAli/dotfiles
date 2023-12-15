@@ -54,8 +54,12 @@ return {
 			keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		end
 
-		-- used to enable autocompletion (assign to every lsp server config)
-		local capabilities = cmp_nvim_lsp.default_capabilities()
+		-- Configure diagnostics
+		vim.diagnostic.config({
+			float = {
+				source = "always", -- always show source of diagnostics
+			},
+		})
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = "󰰁 ", Info = " " }
@@ -63,6 +67,9 @@ return {
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
+
+		-- used to enable autocompletion (assign to every lsp server config)
+		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		-- configure css server
 		lspconfig["cssls"].setup({
