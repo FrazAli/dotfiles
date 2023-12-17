@@ -18,7 +18,7 @@ return {
 									left = 2,
 									right = 2,
 								},
-								highlight = "CursorLine", -- set code block highlight to CursorLine
+								highlight = "LspReferenceText", -- set code block highlight group to 'LspReferenceText'
 							},
 						},
 					},
