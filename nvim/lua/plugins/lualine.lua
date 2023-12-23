@@ -8,6 +8,19 @@ return {
 				component_separators = "|",
 				section_separators = "",
 			},
+			sections = {
+				lualine_a = {
+					{
+						"buffers",
+						show_modified_status = true,
+					},
+				},
+				lualine_b = { "branch", "diff", "diagnostics" },
+				lualine_c = {},
+				lualine_x = {},
+				lualine_y = { "progress" },
+				lualine_z = { "location" },
+			},
 		})
 	end,
 }
