@@ -13,6 +13,7 @@ return {
 					{
 						"buffers",
 						show_modified_status = true,
+						use_mode_colors = true,
 					},
 				},
 				lualine_b = { "branch", "diff", "diagnostics" },
