@@ -32,6 +32,7 @@ return {
 					},
 				},
 				["core.export"] = {}, -- Export Neorg files to other formats
+				["core.summary"] = {}, -- Generate Workspace summary
 			},
 		})
 	end,
