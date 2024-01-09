@@ -31,6 +31,7 @@ return {
 						default_workspace = "notes",
 					},
 				},
+				["core.export"] = {}, -- Export Neorg files to other formats
 			},
 		})
 	end,
