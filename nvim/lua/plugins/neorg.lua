@@ -1,7 +1,10 @@
 return {
 	"nvim-neorg/neorg",
 	build = ":Neorg sync-parsers",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	version = "v7.0.0", -- Latest neorg is broken due to luarocks dependency
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
 	config = function()
 		require("neorg").setup({
 			load = {
