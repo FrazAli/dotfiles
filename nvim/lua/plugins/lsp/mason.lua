@@ -24,7 +24,7 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"cssls",
-				"emmet_ls",
+				"emmet_language_server",
 				"gopls",
 				"html",
 				"lua_ls",
