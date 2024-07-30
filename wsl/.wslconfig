@@ -2,3 +2,7 @@
 
 [wsl2]
 guiApplications=true
+
+[experimental]
+# Automatically releases cached memory after detecting idle CPU usage. Set to gradual for slow release, and dropcache for instant release of cached memory.
+autoMemoryReclaim=gradual
