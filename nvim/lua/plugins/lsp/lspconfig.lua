@@ -57,7 +57,7 @@ return {
 		-- Configure diagnostics
 		vim.diagnostic.config({
 			float = {
-				source = "always", -- always show source of diagnostics
+				source = true, -- always show source of diagnostics
 			},
 		})
 
