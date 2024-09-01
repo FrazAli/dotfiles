@@ -17,4 +17,5 @@ require("lazy").setup({
 	{ import = "plugins.lsp" },
 	{ import = "plugins.completion" },
 	{ import = "plugins.formatting" },
+	{ import = "plugins.ai" },
 })
