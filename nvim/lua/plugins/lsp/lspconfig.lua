@@ -153,6 +153,20 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure stylelint for css
+		lspconfig["stylelint_lsp"].setup({
+			filetypes = { "css", "scss" },
+			root_dir = require("lspconfig/util").root_pattern("package.json", ".git"),
+			settings = {
+				stylelintplus = {
+					-- see available options in stylelint-lsp documentation
+				},
+			},
+			on_attach = function(client)
+				client.server_capabilities.document_formatting = false
+			end,
+		})
+
 		-- configure svelte server
 		lspconfig["svelte"].setup({
 			capabilities = capabilities,

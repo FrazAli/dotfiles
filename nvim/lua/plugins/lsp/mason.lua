@@ -48,6 +48,7 @@ return {
 				"isort", -- python formatter
 				"black", -- python formatter
 				"pylint", -- python linter
+				"stylelint", -- css linter
 			},
 		})
 	end,
