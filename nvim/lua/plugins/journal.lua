@@ -1,6 +1,6 @@
 local _template = [[
-# Metadata
-Date: %A, %B %d, %Y
+# %A, %B %d, %Y
+
 Weather: 🌡️🌞 ☁️ ☔ ❄️ ⚡
 
 # Calendar
