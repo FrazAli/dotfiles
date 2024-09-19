@@ -1,3 +1,19 @@
+local _template = [[
+# Metadata
+Date: %A, %B %d, %Y
+Weather: 🌡️🌞 ☁️ ☔ ❄️ ⚡
+
+# Calendar
+
+# Goals
+
+# Health
+
+# Habits
+
+# Notes
+]]
+
 return {
 	"jakobkhansen/journal.nvim",
 	config = function()
@@ -18,7 +34,7 @@ return {
 				entries = {
 					day = {
 						format = "%Y/%m-%B/daily/%d-%A", -- Format of the journal entry in the filesystem.
-						template = "# %A %B %d %Y\n", -- Optional. Template used when creating a new journal entry
+						template = _template, -- Optional. Template used when creating a new journal entry
 						frequency = { day = 1 }, -- Optional. The frequency of the journal entry. Used for `:Journal next`, `:Journal -2` etc
 					},
 					week = {
