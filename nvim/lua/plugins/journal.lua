@@ -27,7 +27,7 @@ return {
 			journal = {
 				-- Default configuration for `:Journal <date-modifier>`
 				format = "%Y/%m-%B/daily/%d-%A",
-				template = "# %A %B %d %Y\n",
+				template = _template,
 				frequency = { day = 1 },
 
 				-- Nested configurations for `:Journal <type> <type> ... <date-modifier>`
