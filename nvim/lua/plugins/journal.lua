@@ -11,6 +11,14 @@ Weather: 🌡️🌞 ☁️ ☔ ❄️ ⚡
 
 # Habits
 
+# Food
+
+## Breakfast
+
+## Lunch
+
+## Dinner
+
 # Notes
 ]]
 
