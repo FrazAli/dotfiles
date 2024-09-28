@@ -92,12 +92,12 @@ return {
 				style = "sidebar",
 				sidebar = {
 					-- Width of the sidebar in characters.
-					width = 42,
+					width = 50,
 					-- Position of the sidebar.
 					-- Available options:
 					-- * `left`
 					-- * `right`
-					position = "left",
+					position = "right",
 				},
 				floating = {
 					-- Border style of the floating window.
