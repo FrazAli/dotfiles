@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	lazy = true,
 	opts = {
-		-- add any opts here
+		-- For adding other custom providers see: https://github.com/yetone/avante.nvim/wiki#custom-providers
 		provider = "groq",
 		vendors = {
 			groq = {
