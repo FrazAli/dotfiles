@@ -1,1 +1,4 @@
 **/.luarc.json
+
+# macOS folder settings
+.DS_store
