@@ -14,7 +14,8 @@ vim.o.pumblend = 0
 
 -- Need these for Nerog, TODO: Investigate why ?
 vim.wo.foldlevel = 99
-vim.wo.conceallevel = 2
+-- This option helps conceal markdown
+-- vim.wo.conceallevel = 2
 
 -- General
 vim.o.scrolloff = 3 -- Number of lines offset for scrolling text
