@@ -1,3 +1,10 @@
+-- Define the custom highlight group for the indent
+vim.cmd([[
+    highlight SnacksIndent guifg=#353535 guibg=NONE
+    highlight SnacksIndentScope guifg=#929292 guibg=NONE
+]])
+
+-- Plugin configuration
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -5,8 +12,18 @@ return {
 	---@type snacks.Config
 	opts = {
 		bigfile = { enabled = true },
-		dashboard = { enabled = true },
-		indent = { enabled = true },
+		dashboard = { enabled = false },
+		indent = {
+			enabled = true,
+			only_scope = true,
+			hl = { fg = "SnacksIndent" },
+			animate = {
+				enabled = false,
+			},
+			scope = {
+				hl = "SnacksIndentScope",
+			},
+		},
 		input = { enabled = true },
 		notifier = {
 			enabled = true,
@@ -14,7 +31,7 @@ return {
 		},
 		quickfile = { enabled = true },
 		scroll = { enabled = true },
-		statuscolumn = { enabled = true },
+		statuscolumn = { enabled = false },
 		words = { enabled = true },
 		styles = {
 			notification = {
@@ -121,13 +138,6 @@ return {
 				Snacks.terminal()
 			end,
 			desc = "Toggle Terminal",
-		},
-		{
-			"<c-_>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "which_key_ignore",
 		},
 		{
 			"]]",
