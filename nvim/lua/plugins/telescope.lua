@@ -28,9 +28,14 @@ return {
 		local keymap = vim.keymap
 
 		keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy [f]ind [f]iles in cwd" })
-		keymap.set("n", "<leader>o", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy [f]ind [r]ecent files" })
-		keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>", { desc = "[F]ind [s]tring in cwd" })
-		keymap.set("n", "<leader>s", "<cmd>Telescope grep_string<cr>", { desc = "[F]ind string under [c]ursor in cwd" })
+		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy [f]ind [r]ecent files" })
+		keymap.set("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", { desc = "[F]ind [s]tring in cwd" })
+		keymap.set(
+			"n",
+			"<leader>ss",
+			"<cmd>Telescope grep_string<cr>",
+			{ desc = "[F]ind string under [c]ursor in cwd" }
+		)
 		keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>", { desc = "[F]ind [b]uffers by name" })
 	end,
 }
