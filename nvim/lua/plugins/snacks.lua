@@ -27,7 +27,7 @@ return {
 		input = { enabled = true },
 		notifier = {
 			enabled = true,
-			timeout = 3000,
+			timeout = 5000,
 		},
 		quickfile = { enabled = true },
 		scroll = { enabled = true },
@@ -131,13 +131,6 @@ return {
 				Snacks.notifier.hide()
 			end,
 			desc = "Dismiss All Notifications",
-		},
-		{
-			"<c-/>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "Toggle Terminal",
 		},
 		{
 			"]]",
