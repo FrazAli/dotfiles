@@ -3,23 +3,28 @@ local _template = [[
 
 Weather: 🌡️🌞 ☁️ ☔ ❄️ ⚡
 
-# Calendar
+## Calendar
 
-# Goals
+## Goals
 
-# Health
+## Habits
 
-# Habits
+## Health
 
-# Food
+### Food
 
-## Breakfast
+#### Breakfast
 
-## Lunch
+#### Lunch
 
-## Dinner
+#### Dinner
 
 # Notes
+
+## Work
+
+## Personal
+
 ]]
 
 return {
