@@ -1,0 +1,29 @@
+# Custom configurations for Ghostty terminal
+# Copy this file to ~/.config/ghostty/config
+#
+# Keyboard shortcut to load the config from Ghostty: cmd + shift + ,
+
+# Font configurations
+font-synthetic-style = false
+
+font-family = "Hack Nerd Font Mono"
+font-style = "Bold"
+
+window-inherit-font-size = false
+font-size = 16
+
+# Color Theme
+theme = "catppuccin-macchiato"
+background = "#171727"
+
+# Background opacity and blur
+background-opacity = 0.6
+background-blur-radius = 30
+
+# Window title bar, borders and padding
+macos-titlebar-style = hidden
+window-padding-x = 5
+window-padding-y = 5,0
+
+# Enable copy on select
+copy-on-select = true
