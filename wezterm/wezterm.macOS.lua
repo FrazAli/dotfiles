@@ -14,7 +14,7 @@ return {
 
 	font_size = 16.0,
 
-	-- Wondow properties
+	-- Window properties
 	enable_tab_bar = false,
 
 	-- Color scheme
