@@ -39,7 +39,9 @@ return {
 					base = "#484848", -- slightly less dark than default
 				},
 			},
-			custom_highlights = {},
+			custom_highlights = {
+				LineNr = { fg = "#797989" },
+			},
 			integrations = {
 				cmp = true,
 				gitsigns = true,
