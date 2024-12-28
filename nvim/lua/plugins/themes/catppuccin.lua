@@ -36,7 +36,7 @@ return {
 			},
 			color_overrides = {
 				mocha = {
-					base = "#444444", -- slightly less dark than default
+					base = "#484848", -- slightly less dark than default
 				},
 			},
 			custom_highlights = {},
