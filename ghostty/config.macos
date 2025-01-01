@@ -3,6 +3,12 @@
 #
 # Keyboard shortcut to load the config from Ghostty: cmd + shift + ,
 
+# macos icon style
+macos-icon = "custom-style"
+macos-icon-frame = "aluminum"
+macos-icon-ghost-color = #00FF00
+macos-icon-screen-color = #00FF00
+
 # Font configurations
 font-synthetic-style = false
 
