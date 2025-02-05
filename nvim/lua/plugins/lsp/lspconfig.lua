@@ -143,19 +143,42 @@ return {
 			},
 		})
 
-		-- configure python server
+		-- configure matlab server
 		lspconfig["matlab_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- configure python server
+		-- configure pyright python server
 		lspconfig["pyright"].setup({
+			capabilities = (function()
+				-- suppress pyright 'not accessed hints'
+				-- source: https://github.com/astral-sh/ruff-lsp/issues/384#issuecomment-1989619482
+				local cap = vim.lsp.protocol.make_client_capabilities()
+				cap.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+				return cap
+			end)(),
+			on_attach = on_attach,
+			settings = {
+				pyright = {
+					disableOrganizeImports = true, -- Using Ruff
+				},
+				python = {
+					analysis = {
+						-- Ignore all files for analysis to exclusively use Ruff for linting
+						ignore = { "*" }, -- Using Ruff
+					},
+				},
+			},
+		})
+
+		-- configure ruff python language server
+		lspconfig["ruff_lsp"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- configure python server
+		-- configure rust server
 		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,

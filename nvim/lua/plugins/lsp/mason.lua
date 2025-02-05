@@ -31,6 +31,7 @@ return {
 				"lua_ls",
 				"matlab_ls",
 				"pyright",
+				"ruff_lsp",
 				"rust_analyzer",
 				"svelte",
 				"tailwindcss",
@@ -45,9 +46,7 @@ return {
 			ensure_installed = {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint", -- python linter
+				"ruff", -- python formatter
 				"stylelint", -- css linter
 			},
 		})
