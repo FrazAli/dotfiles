@@ -14,7 +14,7 @@ return {
 				json = { "prettier" },
 				lua = { "stylua" },
 				markdown = { "prettier" },
-				python = { "isort", "black" }, -- conform runs multiple formatters sequentially
+				python = { "ruff" }, -- conform runs multiple formatters sequentially
 				svelte = { "prettier" },
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
