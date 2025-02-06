@@ -14,7 +14,7 @@ return {
 				json = { "prettier" },
 				lua = { "stylua" },
 				markdown = { "prettier" },
-				python = { "ruff format", "ruff_organize_imports" }, -- conform runs multiple formatters sequentially
+				python = { "ruff_format", "ruff_organize_imports" }, -- conform runs multiple formatters sequentially
 				svelte = { "prettier" },
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
@@ -22,17 +22,17 @@ return {
 			},
 			-- source: https://github.com/astral-sh/ruff-lsp/issues/387#issuecomment-2069141768
 			formatters = {
-				ruff_organize_imports = {
-					command = "ruff",
+				ruff_all = {
+					command = "sh",
 					args = {
-						"check",
-						"--force-exclude",
-						"--select=I001",
-						"--fix",
-						"--exit-zero",
-						"--stdin-filename",
+						"-c",
+						table.concat({
+							'ruff format --stdin-filename "$1" -',
+							"&& ruff check --force-exclude --select=I001 --fix",
+							'--exit-zero --stdin-filename "$1" -',
+						}, " "),
+						"_",
 						"$FILENAME",
-						"-",
 					},
 					stdin = true,
 					cwd = require("conform.util").root_file({
