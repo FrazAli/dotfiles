@@ -26,7 +26,6 @@ return {
 				"cssls",
 				"emmet_language_server",
 				"eslint",
-				"gopls",
 				"html",
 				"lua_ls",
 				"matlab_ls",
