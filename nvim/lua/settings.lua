@@ -70,3 +70,8 @@ vim.opt.listchars = {
 	nbsp = "+",
 	eol = "↵",
 }
+
+-- Set fill chars (replace eob characters i.e. ~)
+vim.opt.fillchars = {
+	eob = " ",
+}
