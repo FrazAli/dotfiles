@@ -172,8 +172,10 @@ return {
 			},
 		})
 
+		-- configure rego language server with regal
+
 		-- configure ruff python language server
-		lspconfig["ruff"].setup({
+		lspconfig["regal"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})

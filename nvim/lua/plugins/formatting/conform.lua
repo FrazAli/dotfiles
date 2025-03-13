@@ -19,6 +19,7 @@ return {
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
 				yaml = { "prettier" },
+				rego = { "opa fmt -w" },
 			},
 			-- source: https://github.com/astral-sh/ruff-lsp/issues/387#issuecomment-2069141768
 			formatters = {
