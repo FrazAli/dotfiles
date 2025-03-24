@@ -36,6 +36,6 @@ return {
 			"<cmd>Telescope grep_string<cr>",
 			{ desc = "[F]ind string under [c]ursor in cwd" }
 		)
-		keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>", { desc = "[F]ind [b]uffers by name" })
+		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "[F]ind [b]uffers by name" })
 	end,
 }
