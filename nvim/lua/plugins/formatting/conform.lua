@@ -15,11 +15,13 @@ return {
 				lua = { "stylua" },
 				markdown = { "prettier" },
 				python = { "ruff_format", "ruff_organize_imports" }, -- conform runs multiple formatters sequentially
+				rego = { "opa fmt -w" },
 				svelte = { "prettier" },
+				terraform = { "terraform_fmt" },
+				tf = { "terraform_fmt" },
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
 				yaml = { "prettier" },
-				rego = { "opa fmt -w" },
 			},
 			-- source: https://github.com/astral-sh/ruff-lsp/issues/387#issuecomment-2069141768
 			formatters = {
@@ -43,12 +45,18 @@ return {
 					}),
 				},
 			},
-			format_on_save = {
-				-- These options will be passed to conform.format()
-				async = false, -- setting this true means the timeout has no effect
-				timeout_ms = 500, -- formatting timeout for sync formatting
-				lsp_fallback = true, -- fallback to LSP if there is no Formatter
-			},
+			format_on_save = function(bufnr)
+				-- Disable with a global or buffer-local variable
+				if vim.b[bufnr].disable_autoformat or vim.g.disable_autoformat then
+					return
+				end
+				return {
+					-- These options will be passed to conform.format()
+					async = false, -- setting this true means the timeout has no effect
+					timeout_ms = 500, -- formatting timeout for sync formatting
+					lsp_format = "fallback", -- fallback to LSP if there is no Formatter
+				}
+			end,
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>f", function()
@@ -58,5 +66,26 @@ return {
 				lsp_fallback = true,
 			})
 		end, { desc = "[F]ormat file or range (in visual mode)" })
+
+		-- Command to disable auto-format on save
+		vim.api.nvim_create_user_command("ConformFormatDisable", function(args)
+			if args.bang then
+				-- 'ConformFormatDisable!' will disable formatting just for this buffer
+				vim.b.disable_autoformat = true
+			else
+				vim.g.disable_autoformat = true
+			end
+		end, {
+			desc = "Disable autoformat-on-save",
+			bang = true,
+		})
+
+		-- Command to re-enable auto-format on save
+		vim.api.nvim_create_user_command("ConformFormatEnable", function()
+			vim.b.disable_autoformat = false
+			vim.g.disable_autoformat = false
+		end, {
+			desc = "Re-enable autoformat-on-save",
+		})
 	end,
 }
