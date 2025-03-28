@@ -68,7 +68,7 @@ return {
 		end, { desc = "[F]ormat file or range (in visual mode)" })
 
 		-- Command to disable auto-format on save
-		vim.api.nvim_create_user_command("ConformFormatDisable", function(args)
+		vim.api.nvim_create_user_command("FormatDisable", function(args)
 			if args.bang then
 				-- 'ConformFormatDisable!' will disable formatting just for this buffer
 				vim.b.disable_autoformat = true
@@ -81,7 +81,7 @@ return {
 		})
 
 		-- Command to re-enable auto-format on save
-		vim.api.nvim_create_user_command("ConformFormatEnable", function()
+		vim.api.nvim_create_user_command("FormatEnable", function()
 			vim.b.disable_autoformat = false
 			vim.g.disable_autoformat = false
 		end, {

@@ -8,10 +8,10 @@ return {
 	config = function()
 		require("tailwind-sorter").setup({
 			on_save_enabled = function(bufnr)
+				-- Enable formatting based on FormatCommand set from Conform.nvim config
 				if vim.b[bufnr].disable_autoformat or vim.g.disable_autoformat then
 					return false
 				end
-
 				return true
 			end,
 			on_save_pattern = { "*.html", "*.jsx", "*.tsx", "*.astro" }, -- The file patterns to watch and sort.
