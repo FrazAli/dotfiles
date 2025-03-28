@@ -48,7 +48,7 @@ return {
 			format_on_save = function(bufnr)
 				-- Disable with a global or buffer-local variable
 				if vim.b[bufnr].disable_autoformat or vim.g.disable_autoformat then
-					return
+					return false
 				end
 				return {
 					-- These options will be passed to conform.format()
