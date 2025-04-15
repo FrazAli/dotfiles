@@ -212,6 +212,12 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure terraform server
+		lspconfig["terraformls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure typescript server with plugin
 		lspconfig["ts_ls"].setup({
 			capabilities = capabilities,

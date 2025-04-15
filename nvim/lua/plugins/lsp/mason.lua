@@ -47,6 +47,7 @@ return {
 				"stylua", -- lua formatter
 				"ruff", -- python formatter
 				"stylelint", -- css linter
+				"tflint", -- terraform linter
 				"regal", -- rego linter
 			},
 		})
