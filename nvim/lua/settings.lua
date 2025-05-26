@@ -30,7 +30,7 @@ vim.o.colorcolumn = "120" -- Column number to mark for recommended max line leng
 vim.o.cursorline = true -- Highlight cursor line
 
 -- Spell checking
-vim.o.spelllang = "en_us" -- Languages for spell checking
+vim.o.spelllang = "en_us,sv" -- Languages for spell checking
 vim.o.spell = true
 
 -- Text wrap
