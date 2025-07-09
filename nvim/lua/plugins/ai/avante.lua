@@ -4,21 +4,16 @@ return {
 	lazy = true,
 	opts = {
 		-- For adding other custom providers see: https://github.com/yetone/avante.nvim/wiki/Custom-providers
-		provider = "claude",
-		claude = {
-			endpoint = "https://api.anthropic.com",
-			model = "claude-3-5-sonnet-20241022",
-			temperature = 0,
-			max_tokens = 4096,
+		providers = {
+			claude = {
+				endpoint = "https://api.anthropic.com",
+				model = "claude-3-5-sonnet-20241022",
+				extra_request_body = {
+					temperature = 0,
+					max_tokens = 4096,
+				},
+			},
 		},
-		-- vendors = {
-		-- 	groq = {
-		-- 		__inherited_from = "openai",
-		-- 		api_key_name = "GROQ_API_KEY",
-		-- 		endpoint = "https://api.groq.com/openai/v1/",
-		-- 		model = "llama-3.3-70b-versatile",
-		-- 	},
-		-- },
 	},
 	build = ":AvanteBuild", -- This is optional, recommended tho. Also note that this will block the startup for a bit since we are compiling bindings in Rust.
 	dependencies = {
