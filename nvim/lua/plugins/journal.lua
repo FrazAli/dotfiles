@@ -4,7 +4,7 @@ local function get_weather()
 	local lat = "59.3293" -- Replace with your latitude
 	local lon = "18.0686" -- Replace with your longitude
 	local url = string.format(
-		"https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&daily=weathercode,temperature_2m_max,temperature_2m_min,windspeed_10m_min,windspeed_10m_max&wind_speed_unit=kmh&timezone=auto",
+		"https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&daily=weathercode,temperature_2m_max,temperature_2m_min,windspeed_10m_min,windspeed_10m_max,relative_humidity_2m_mean&wind_speed_unit=kmh&timezone=auto",
 		lat,
 		lon
 	)
@@ -67,15 +67,22 @@ local function get_weather()
 	local min_temp = weather_data.daily.temperature_2m_min[1]
 	local min_wind = weather_data.daily.windspeed_10m_min[1]
 	local max_wind = weather_data.daily.windspeed_10m_max[1]
+	local mean_humidity = weather_data.daily.relative_humidity_2m_mean[1]
 
 	local weather_string = string.format(
-		"🌡️ Temperature: %s°C - %s°C\n💨 Wind: %s - %s km/h\n🌞 Forecast: %s %s\n",
+		"- 🌡️ Temperature: %s°C - %s°C\n"
+			.. "- 💨 Wind: %s - %s km/h\n"
+			.. "- 🌞 Forecast: %s %s\n"
+			.. "- 💧 Humidity\n"
+			.. "  - 🌍 Outdoor: %s﹪\n"
+			.. "  - 🏠 Indoor RH (AM/PM): #﹪ / #﹪\n",
 		min_temp,
 		max_temp,
 		min_wind,
 		max_wind,
 		weather.icon,
-		weather.description
+		weather.description,
+		mean_humidity
 	)
 	return weather_string
 end
@@ -596,4 +603,3 @@ return {
 		})
 	end,
 }
-
