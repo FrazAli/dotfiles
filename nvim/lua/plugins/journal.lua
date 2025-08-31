@@ -89,61 +89,89 @@ local daily_template = function()
 ]] .. get_weather() .. [[
 
 ## Morning Protocol (empty stomach)
-- [ ] 200–300 ml warm water + pinch sea salt (~⅛ tsp) @ ...:...
-- Notes (taste, nausea, reflux): .....................
+- [ ] 200–300 ml warm water + pinch sea salt (~⅛ tsp) @ 00:00
+- Notes after drinking water: None
+  _(taste, nausea, reflux)_
 
 ## Health — Core Tracking (Phase 1)
 
 ### Bowel Movement (BM) Log
-- BM today (Y/N): ...
-- Time(s): ...:... / ...:...
-- Bristol type (1–7): ...
-- Ease (1=hard/strain, 5=effortless): ...
-- Visible mucus/blood (Y/N): ... | Urgency (0–3): ...
-- Notes: .....................
+#### BM # 1
+- Time: 00:00
+- Bristol type (1–7): #
+- Ease (1=hard/strain, 5=effortless): #
+- Time on toilet: # min
+- Visible mucus/blood (Y/N): N
+- Color: [e.g. brown]
+- Notes: [e.g. Hard to start, felt incomplete, small dry lumps first then smoother log.]
+
 
 ### Symptoms (0=none, 3=severe)
-- Bloating ... | Cramps ... | Nausea ... | Reflux ... | Headache ...
-- Sinus/Throat irritation ... | Itch/Histamine ... | Fatigue ... | Brain fog ...
-- Sleepiness after meals ... | Dizziness with exertion ...
+- Bloating: 0 | Cramps: 0 | Nausea: 0 | Reflux: 0 | Headache: 0
+- Sinus/Throat irritation: 0 | Itch/Histamine: 0 | Fatigue: 0 | Brain fog: 0
+- Dizziness with exertion: 0
 
 ### Sleep (last night)
-- Bed: ...:... | Wake: ...:... | Awakenings #: ...
-- Dream intensity (0–3): ... | Sleep paralysis (Y/N): ...
-- Rested on waking (0–3): ...
+- Bed: 10:00 | Wake: 00:00 | Awakenings: #
+- Dream intensity (0–3): 0 | Sleep paralysis (Y/N): Y
+- Rested on waking (0–3): 2
 
 ### Protocol Timing & Doses
-- Flaxseed 1 Tbsp (~10 g) with breakfast @ ...:... (Taken Y/N): ...
-- Psyllium (whole husk) ½–1 tsp in water @ 10:30 (≥90 min from food/supps) ➜ Extra water glass (Y/N): ...
-- Magnesium citrate 200–300 mg after dinner @ ...:... (Dose: ... mg)
-- Extras today (tick): [ ] Ginger tea  [ ] Thyme tea  [ ] Chamomile  [ ] Rooibos
-- Hydration total (L): ...
+- Flaxseed 1 Tbsp (~10 g) with breakfast @ 07:00 (Taken Y/N): Y
+- Psyllium (whole husk) ½–1 tsp in water @ 10:30 (≥90 min from food/supps) ➜ Extra water glass (Y/N): Y
+- Magnesium citrate 200–300 mg after dinner @ 21:00 (Dose: 200 mg)
+- Extras today (tick):
+  - [ ] Ginger tea
+  - [ ] Thyme tea
+  - [ ] Chamomile
+  - [ ] Rooibos
+- Hydration total (L): #
+  - Water: #
+  - Tea: #
 
 ## Food Log (brief)
 ### Breakfast (07:00–08:00)
-- Menu: .....................
-- Rice cakes: ... (1–2) | Veg topping: .....................
-- Add-ons: [ ] Avocado  [ ] Tahini  [ ] Seeds  [ ] Olive oil  [ ] Lemon
+- Base:
+  - [ ] Rice Cakes: #
+  - [ ] Oats
+  - [ ] Sweet Potatoes
+- Protein: [e.g. Eggs: 2, left over meat: 1]
+- Veggies: [e.g. Avocado: 1, Mini bell peppers: 1]
+- Healthy fats:
+  - [ ] Avocados
+  - [ ] Tahini
+  - [ ] Seeds
+  - [ ] Olive oil
+  - [ ] Nut butter
+- Extras:
+  - [ ] Lemon juice
+  - [ ] Herbs / spices
+  - [ ] Fruit/Berries [e.g. Banana: 1, Berries: #]
+- Sleepiness after meals (0=none, 3=severe): 0
 
 ### Lunch (12:00–13:00)
-- Menu: .....................
+- Menu: [e.g. Veggie salad: 1, Chicken: 2]
+- Sleepiness after meals (0=none, 3=severe): 0
 
 ### Dinner (18:00–19:00)
-- Menu: .....................
+- Menu: [e.g. Veggie salad: 1, Chicken: 2]
+- Sleepiness after meals (0=none, 3=severe): 0
 
 ### Snacks (time + item)
-- ...:... .....................
-- ...:... .....................
+- 00:00 [e.g. Banana: 1]
+- 00:00 [e.g. Banana: 1]
 
 ## Training / Activity
-- Type: [ ] Walk  [ ] Strength  [ ] Bike/Row  [ ] Mobility
-- Duration: ... min | Effort (RPE 1–10): ...
-- Any dizziness/near-faint? (Y/N): ... | Notes: .....................
+- [ ] Walk: # min
+- [ ] Strength: # min, effort (RPE 1–10): #
+- Notes:
+  - Any dizziness/near-faint? (Y/N): N | Details: [e.g. Nausea, dizziness]
 
 ## Triggers / Exposures (today)
-- Damp/smell? (Y/N): ... | Visible dust specks? (Y/N): ...
-- New/old items brought in: .....................
-- Other: .....................
+- Damp/smell? (Y/N): N
+- Visible dust specks? (Y/N): N
+- New/old items brought in: N, [e.g. clothes, books]
+- Other: [Triggers/Exposures]
 
 # Notes
 - .....................
@@ -168,6 +196,97 @@ local weekly_template = [[
 - Salt water AM: .../7   |  Flax with breakfast: .../7   |  Psyllium 10:30: .../7   |  Magnesium after dinner: .../7
 - Tea rotation: Chamomile ... / Thyme ... / Ginger ... / Rooibos ...
 
+## Weather
+
+]] .. get_weather() .. [[
+
+## Morning Protocol (empty stomach)
+- [ ] 200–300 ml warm water + pinch sea salt (~⅛ tsp) @ 00:00
+- Notes after drinking water: None
+  _(taste, nausea, reflux)_
+
+## Health — Core Tracking (Phase 1)
+
+### Bowel Movement (BM) Log
+#### BM # 1
+- Time: 00:00
+- Bristol type (1–7): #
+- Ease (1=hard/strain, 5=effortless): #
+- Timo on toilet: # min
+- Visible mucus/blood (Y/N): N
+- Color: [e.g. brown]
+- Notes: [e.g. Hard to start, felt incomplete, small dry lumps first then smoother log.]
+
+
+### Symptoms (0=none, 3=severe)
+- Bloating: 0 | Cramps: 0 | Nausea: 0 | Reflux: 0 | Headache: 0
+- Sinus/Throat irritation: 0 | Itch/Histamine: 0 | Fatigue: 0 | Brain fog: 0
+- Sleepiness after meals: 0 | Dizziness with exertion: 0
+
+### Sleep (last night)
+- Bed: 10:00 | Wake: 00:00 | Awakenings: #
+- Dream intensity (0–3): 0 | Sleep paralysis (Y/N): Y
+- Rested on waking (0–3): 2
+
+### Protocol Timing & Doses
+- Flaxseed 1 Tbsp (~10 g) with breakfast @ 07:00 (Taken Y/N): Y
+- Psyllium (whole husk) ½–1 tsp in water @ 10:30 (≥90 min from food/supps) ➜ Extra water glass (Y/N): Y
+- Magnesium citrate 200–300 mg after dinner @ 21:00 (Dose: 200 mg)
+- Extras today (tick):
+  - [ ] Ginger tea
+  - [ ] Thyme tea
+  - [ ] Chamomile
+  - [ ] Rooibos
+- Hydration total (L): #
+
+## Food Log (brief)
+### Breakfast (07:00–08:00)
+- Base:
+  - [ ] Rice Cakes: #
+  - [ ] Oats
+  - [ ] Sweet Potatoes
+- Protein: [e.g. Eggs: 2, left over meat: 1]
+- Veggies: [e.g. Avocado: 1, Mini bell peppers: 1]
+- Healthy fats:
+  - [ ] Avacados
+  - [ ] Tahini
+  - [ ] Seeds
+  - [ ] Olive oil
+  - [ ] Nut butter
+- Extras:
+  - [ ] Lemon juice
+  - [ ] Herbs / spices
+  - [ ] Fruits [e.g. Banana: 1, Berries: #]
+
+### Lunch (12:00–13:00)
+- Menu: [e.g. Veggie salad: 1, Chicken: 2]
+
+### Dinner (18:00–19:00)
+- Menu: [e.g. Veggie salad: 1, Chicken: 2]
+
+### Snacks (time + item)
+- 00:00 [e.g. Banana: 1]
+- 00:00 [e.g. Banana: 1]
+
+## Training / Activity
+- [ ] Walk: # min
+- [ ] Strength: # min, effort (RPE 1–10): #
+- Notes:
+  - Any dizziness/near-faint? (Y/N): N | Details: [e.g. Nausea, dizziness]
+
+## Triggers / Exposures (today)
+- Damp/smell? (Y/N): N
+- Visible dust specks? (Y/N): N
+- New/old items brought in: N, [e.g. clothes, books]
+- Other: [Triggers/Exposures]
+
+# Notes
+- .....................
+- .....................
+
+## Work
+
+## Personal
 ## Symptoms trend (0–3; ↓ better, ↑ worse)
 - Bloating: ... → ...  |  Cramps: ... → ...  |  Nausea: ... → ...
 - Sinus/Throat: ... → ...  |  Fatigue: ... → ...
