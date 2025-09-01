@@ -148,8 +148,8 @@ local daily_template = function()
 
 ### Protocol Timing & Doses
 - Flaxseed 1 Tbsp (~10 g) with breakfast @ 07:00 (Taken Y/N): Y
-- Psyllium (whole husk) ½–1 tsp in water @ 10:30 (≥90 min from food/supps) ➜ Extra water glass (Y/N): N
-- Magnesium citrate 200–300 mg after dinner @ 21:00 (Dose: 200 mg)
+- Psyllium (whole husk) — [Not yet started in Phase 1]
+- Magnesium citrate 200–300 mg after dinner @ 21:00 (Dose: 200 mg) Y
 - Extras today (tick):
   - [ ] Ginger tea
   - [ ] Thyme tea
