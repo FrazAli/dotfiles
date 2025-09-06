@@ -41,7 +41,11 @@ return {
 			},
 			color_overrides = {},
 			custom_highlights = function(colors)
+				local dark_purple = "#242252"
+				local light_purple = "#444488"
 				return {
+					Visual = { bg = light_purple },
+					CursorLine = { bg = dark_purple },
 					CursorLineNr = { fg = colors.peach, bold = true },
 				}
 			end,
