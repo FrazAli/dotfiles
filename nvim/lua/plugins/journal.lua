@@ -4,7 +4,7 @@ local function get_weather()
 	local lat = "59.3293" -- Replace with your latitude
 	local lon = "18.0686" -- Replace with your longitude
 	local url = string.format(
-		"https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&daily=weathercode,temperature_2m_max,temperature_2m_min,windspeed_10m_min,windspeed_10m_max,relative_humidity_2m_mean&wind_speed_unit=kmh&timezone=auto",
+		"https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&daily=weathercode,temperature_2m_max,temperature_2m_min,windspeed_10m_min,windspeed_10m_max,relative_humidity_2m_mean&wind_speed_unit=ms&timezone=auto",
 		lat,
 		lon
 	)
@@ -71,7 +71,7 @@ local function get_weather()
 
 	local weather_string = string.format(
 		"- 🌡️ Temperature: %s°C - %s°C\n"
-			.. "- 💨 Wind: %s - %s km/h\n"
+			.. "- 💨 Wind: %s - %s m/s\n"
 			.. "- 🌞 Forecast: %s %s\n"
 			.. "- 💧 Humidity\n"
 			.. "  - 🌍 Outdoor: %s﹪\n"
