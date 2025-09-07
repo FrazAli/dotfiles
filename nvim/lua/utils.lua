@@ -1,4 +1,5 @@
 local M = {}
+
 function M.get_weather()
 	-- Fetch weather data from the OpenMeteo API
 	local lat = "59.3293" -- Replace with your latitude
@@ -85,6 +86,11 @@ function M.get_weather()
 		mean_humidity
 	)
 	return weather_string
+end
+
+function M.insert_weather()
+	local weather_string = M.get_weather()
+	vim.api.nvim_put(vim.fn.split(weather_string, "\n"), "l", true, true)
 end
 
 return M
