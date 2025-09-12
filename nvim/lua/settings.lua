@@ -10,7 +10,7 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 -- vim.cmd("colorscheme catppuccin-mocha")
 
 -- Pop-up menus and windows
-vim.o.winborder = "single" -- Default border for all floating windows
+vim.o.winborder = "rounded" -- Default border for all floating windows
 
 -- Need these for Nerog, TODO: Investigate why ?
 vim.wo.foldlevel = 99
