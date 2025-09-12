@@ -2,3 +2,6 @@
 
 # macOS folder settings
 .DS_store
+
+# Gemini context
+GEMINI.md
