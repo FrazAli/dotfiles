@@ -2,8 +2,11 @@
 
 # Set default editor
 export EDITOR=vi
+
+# Enable vi mode while keeping keys for searching command history
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
 
 # Enable starship prompt
 eval "$(starship init zsh)"
