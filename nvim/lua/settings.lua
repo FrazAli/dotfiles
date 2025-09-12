@@ -10,12 +10,16 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 -- vim.cmd("colorscheme catppuccin-mocha")
 
 -- Pop-up menus and windows
-vim.o.winborder = "single"
+vim.o.winborder = "single" -- Default border for all floating windows
 
 -- Need these for Nerog, TODO: Investigate why ?
 vim.wo.foldlevel = 99
 -- This option helps conceal markdown
 -- vim.wo.conceallevel = 2
+
+-- Window splits
+vim.o.splitbelow = true -- Default vertical split
+vim.o.splitright = true -- Default horizontal split
 
 -- General
 vim.o.colorcolumn = "120" -- Column number to mark for recommended max line length
@@ -24,8 +28,6 @@ vim.o.errorbells = false -- System bell on error
 vim.o.scrolloff = 3 -- Number of lines offset for scrolling text
 vim.o.showmode = true -- Show mode in the command line, lualine shows it instead
 vim.o.showtabline = 2 -- When to show buffer tab line, 2 = always
-vim.o.splitbelow = true -- Default vertical split
-vim.o.splitright = true -- Default horizontal split
 vim.o.swapfile = true -- Enable swap file
 vim.o.termguicolors = true -- 24-bit RGB color support
 
@@ -37,6 +39,7 @@ vim.o.spell = true
 vim.o.wrap = true -- Wrap text
 vim.o.linebreak = true -- Break line only on characters in 'breakat'
 vim.o.showbreak = "↳" -- Character to indicate broken line
+vim.o.breakindent = true -- wrapped lines respect indentation
 
 -- Line numbers in gutter
 vim.wo.number = true
@@ -47,8 +50,8 @@ vim.wo.signcolumn = "yes" -- Column to show signs e.g. For LSP and diagnostics
 -- Tab and indentation
 vim.o.expandtab = true
 vim.o.tabstop = 2
+vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
-vim.o.breakindent = true -- wrapped lines respect indentation
 
 -- Buffer search and highlight
 vim.o.incsearch = true -- Incremental search
@@ -59,6 +62,9 @@ vim.o.inccommand = "split" -- Shows substitute changes in a split pop-up
 
 -- Clipboard
 vim.o.clipboard = "unnamedplus" -- Use system clipboard
+
+-- Save undo history
+vim.o.undofile = true
 
 -- Enable completion pop ups
 -- vim.o.completeopt="menu,menuone,preview,noinsert,noselect"
