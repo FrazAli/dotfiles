@@ -16,3 +16,7 @@ eval "$(starship init zsh)"
 # source2: https://www.cyberciti.biz/faq/apple-mac-osx-terminal-color-ls-output-option/
 export TERM=screen-256color-bce
 export CLICOLOR=1
+
+# Aliases
+alias k="kubectl"
+alias ll="eza -lTa --icons --git -h"
