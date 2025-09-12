@@ -5,11 +5,10 @@ return {
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-telescope/telescope.nvim", -- optional
-		"neovim/nvim-lspconfig", -- optional
 	},
 	opts = {
 		server = {
-			override = true, -- setup the server from the plugin if true
+			override = false, -- setup the server from the plugin if true
 			settings = {}, -- shortcut for `settings.tailwindCSS`
 			---@diagnostic disable-next-line: unused-local
 			on_attach = function(client, bufnr) end, -- callback triggered when the server attaches to a buffer

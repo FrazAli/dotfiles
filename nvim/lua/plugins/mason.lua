@@ -11,6 +11,7 @@ return {
 
 		-- enable mason with nicer icons
 		mason.setup({
+			PATH = "append",
 			ui = {
 				icons = {
 					package_installed = "✓",
@@ -38,7 +39,8 @@ return {
 				"regal",
 			},
 			-- auto-install configured servers (with lspconfig)
-			automatic_installation = true, -- not the same as ensure_installed
+			-- disable it to let neovim's builtin 'vim.lsp.enable()' api handle it
+			automatic_installation = false,
 		})
 
 		mason_tool_installer.setup({
