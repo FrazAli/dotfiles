@@ -8,9 +8,12 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- Set theme
 -- vim.cmd("colorscheme catppuccin-mocha")
+
+-- Pop-up menu
 -- This is needed for 'catppuccin' themes, issue: https://github.com/catppuccin/nvim/issues/412
 vim.o.pumblend = 0
 -- vim.o.pumblend = 5            -- Pop-up menu transparency, values: 0-30, 100
+vim.o.winborder = "single"
 
 -- Need these for Nerog, TODO: Investigate why ?
 vim.wo.foldlevel = 99

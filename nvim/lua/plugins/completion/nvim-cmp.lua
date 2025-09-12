@@ -56,6 +56,10 @@ return {
 					ellipsis_char = "...",
 				}),
 			},
+			window = {
+				completion = cmp.config.window.bordered({ border = vim.o.winborder }),
+				documentation = cmp.config.window.bordered({ border = vim.o.winborder }),
+			},
 		})
 
 		-- codeium.setup({
