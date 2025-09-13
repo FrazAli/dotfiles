@@ -26,7 +26,6 @@ return {
 			ensure_installed = {
 				"cssls",
 				"emmet_language_server",
-				"eslint",
 				"html",
 				"lua_ls",
 				"matlab_ls",
