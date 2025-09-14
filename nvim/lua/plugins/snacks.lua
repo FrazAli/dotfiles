@@ -7,6 +7,7 @@ vim.cmd([[
 -- Plugin configuration
 return {
 	"folke/snacks.nvim",
+	dependencies = { "folke/lazydev.nvim" },
 	priority = 1000,
 	lazy = false,
 	---@type snacks.Config
