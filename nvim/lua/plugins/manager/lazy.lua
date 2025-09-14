@@ -17,4 +17,8 @@ require("lazy").setup({
 	{ import = "plugins.completion" },
 	{ import = "plugins.formatting" },
 	{ import = "plugins.ai" },
+}, {
+	rocks = {
+		enabled = false,
+	},
 })
