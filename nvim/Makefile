@@ -28,5 +28,6 @@ endif
 
 .PHONY: nvim-config
 nvim-config:
-	@rsync -auv --force --delete --mkpath ./lua/* ${CONF_DIR}/lua
-	@cp init.lua ${CONF_DIR}/init.lua
+	@mkdir -p "$(CONF_DIR)/lua"
+	@rsync -avh --delete ./lua/ "$(CONF_DIR)/lua/"
+	@install -m 0644 init.lua "$(CONF_DIR)/init.lua"
