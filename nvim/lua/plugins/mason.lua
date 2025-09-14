@@ -49,7 +49,9 @@ return {
 				"ruff", -- python formatter
 				"stylelint", -- css linter
 				"tflint", -- terraform linter
+				"terraform", -- terraform formatter
 				"regal", -- rego linter
+				"opa", -- opa formatter
 			},
 		})
 	end,

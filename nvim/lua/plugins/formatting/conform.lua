@@ -15,7 +15,7 @@ return {
 				lua = { "stylua" },
 				markdown = { "prettier" },
 				python = { "ruff_format", "ruff_organize_imports" }, -- conform runs multiple formatters sequentially
-				rego = { "opa fmt -w" },
+				rego = { "opa" },
 				svelte = { "prettier" },
 				terraform = { "terraform_fmt" },
 				tf = { "terraform_fmt" },
@@ -25,6 +25,11 @@ return {
 			},
 			-- source: https://github.com/astral-sh/ruff-lsp/issues/387#issuecomment-2069141768
 			formatters = {
+				opa = {
+					command = "opa",
+					args = { "fmt" },
+					stdin = true,
+				},
 				ruff_all = {
 					command = "sh",
 					args = {
