@@ -18,7 +18,9 @@ ifeq (${OS}, Linux)
 	@sudo rm /etc/apt/sources.list.d/ascii-image-converter.list
 else ifeq (${OS}, Darwin)
 	@brew update
-	@brew install ripgrep fd rsync pngpaste
+	@brew install ripgrep fd rsync
+	@brew install tree-sitter-cli
+	@brew install pngpaste imagemagick ghostscript mermaid-cli  # for snacks.nvim
 else
 	@echo "OS: ${OS} not supported"
 	@exit 1
