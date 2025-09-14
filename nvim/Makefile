@@ -18,7 +18,7 @@ ifeq (${OS}, Linux)
 	@sudo rm /etc/apt/sources.list.d/ascii-image-converter.list
 else ifeq (${OS}, Darwin)
 	@brew update
-	@brew install ripgrep fd rsync
+	@brew install ripgrep fd rsync pngpaste
 else
 	@echo "OS: ${OS} not supported"
 	@exit 1
