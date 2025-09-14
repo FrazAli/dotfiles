@@ -1,6 +1,5 @@
 return {
 	"yetone/avante.nvim",
-	event = "VeryLazy",
 	lazy = true,
 	opts = {
 		-- For adding other custom providers see: https://github.com/yetone/avante.nvim/wiki/Custom-providers
