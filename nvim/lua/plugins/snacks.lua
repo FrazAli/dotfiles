@@ -14,6 +14,7 @@ return {
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = { enabled = false },
+		image = { enabled = true },
 		indent = {
 			enabled = true,
 			only_scope = true,
