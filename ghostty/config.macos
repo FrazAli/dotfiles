@@ -19,11 +19,11 @@ window-inherit-font-size = false
 font-size = 16
 
 # Color Theme
-theme = "catppuccin-macchiato"
+theme = Catppuccin Macchiato
 background = "#171727"
 
 # Background opacity and blur
-background-opacity = 0.6
+background-opacity = 0.8
 background-blur-radius = 30
 
 # Window title bar, borders and padding
