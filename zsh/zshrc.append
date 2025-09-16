@@ -18,7 +18,7 @@ export TERM=screen-256color-bce
 export CLICOLOR=1
 
 # fzf Options
-export FZF_DEFAULT_OPTS='--height=40% --layout=reverse --border --info=inline'
+export FZF_DEFAULT_OPTS='--height=40% --cycle --layout=reverse --border --info=inline'
 
 # Aliases
 alias k="kubectl"
