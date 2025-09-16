@@ -23,3 +23,5 @@ export FZF_DEFAULT_OPTS='--height=40% --layout=reverse --border --info=inline'
 # Aliases
 alias k="kubectl"
 alias ll="eza -lTa --icons --git"
+alias cat="bat --style=plain --theme=Nord"
+
