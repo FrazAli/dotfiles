@@ -103,10 +103,6 @@ return {
 					highlights.WildMenu = { bg = "NONE" }
 					highlights.CmdLine = { bg = "NONE" }
 					highlights.MsgArea = { bg = "NONE" }
-					--
-					--
-					--     -- Additional popup backgrounds
-					highlights.WhichKeyBorder = highlights.FloatBorder
 				end,
 			})
 
