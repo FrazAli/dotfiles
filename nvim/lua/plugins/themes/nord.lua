@@ -7,7 +7,7 @@ return {
 			require("nord").setup({
 				-- your configuration comes here
 				-- or leave it empty to use the default settings
-				transparent = false, -- Enable this to disable setting the background color
+				transparent = true, -- Enable this to disable setting the background color
 				terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
 				diff = { mode = "bg" }, -- enables/disables colorful backgrounds when used in diff mode. values : [bg|fg]
 				borders = true, -- Enable the border between verticaly split windows visible
@@ -51,8 +51,49 @@ return {
 
 				--- You can override specific highlights to use other groups or a hex color
 				--- function will be called with all highlights and the colorScheme table
+				--- @see https://github.com/gbprod/nord.nvim/lua/nord/colors.lua
+				---  polar_night = {
+				---    origin = "#2E3440", -- nord0
+				---    bright = "#3B4252", -- nord1
+				---    brighter = "#434C5E", -- nord2
+				---    brightest = "#4C566A", -- nord3
+				---    light = "#616E88", -- out of palette
+				---  },
+				---  snow_storm = {
+				---    origin = "#D8DEE9", -- nord4
+				---    brighter = "#E5E9F0", -- nord5
+				---    brightest = "#ECEFF4", -- nord6
+				---  },
+				---  frost = {
+				---    polar_water = "#8FBCBB", -- nord7
+				---    ice = "#88C0D0", -- nord8
+				---    artic_water = "#81A1C1", -- nord9
+				---    artic_ocean = "#5E81AC", -- nord10
+				---  },
+				---  aurora = {
+				---    red = "#BF616A", -- nord11
+				---    orange = "#D08770", -- nord12
+				---    yellow = "#EBCB8B", -- nord13
+				---    green = "#A3BE8C", -- nord14
+				---    purple = "#B48EAD", -- nord15
+				---  },
+				---  none = "NONE",
 				---@param colors Nord.Palette
-				on_highlights = function(highlights, colors) end,
+				on_highlights = function(highlights, colors)
+					-- Tranparent tabline
+					highlights.TabLine = { bg = "NONE" }
+					highlights.TabLineSel = { bg = "NONE" }
+					highlights.TabLineFill = { bg = "NONE" }
+
+					-- Transparent popups
+					highlights.Pmenu = { bg = "NONE" }
+					highlights.PmenuSel = { bg = "NONE" }
+					highlights.PmenuThumb = { bg = "NONE" }
+					highlights.PmenuSbar = { bg = "NONE" }
+
+					-- Float Border
+					highlights.FloatBorder = { bg = "NONE", fg = "#2E3440" }
+				end,
 			})
 
 			vim.cmd.colorscheme("nord")
