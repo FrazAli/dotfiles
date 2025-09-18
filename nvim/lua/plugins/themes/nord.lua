@@ -87,12 +87,26 @@ return {
 
 					-- Transparent popups
 					highlights.Pmenu = { bg = "NONE" }
-					highlights.PmenuSel = { bg = "NONE" }
-					highlights.PmenuThumb = { bg = "NONE" }
+					highlights.PmenuSel = { link = "CursorLine" }
+					highlights.PmenuThumb = { link = "CursorLine" }
 					highlights.PmenuSbar = { bg = "NONE" }
 
-					-- Float Border
-					highlights.FloatBorder = { bg = "NONE", fg = "#2E3440" }
+					-- Transparent Cmdline
+					highlights.WildMenu = { bg = "NONE" }
+
+					-- Float Border and Background
+					highlights.FloatBorder = { bg = "NONE", fg = "#616E88" }
+					highlights.NormalFloat = { bg = "NONE" }
+					highlights.FloatTitle = { bg = "NONE" }
+
+					-- Transparent command line
+					highlights.WildMenu = { bg = "NONE" }
+					highlights.CmdLine = { bg = "NONE" }
+					highlights.MsgArea = { bg = "NONE" }
+					--
+					--
+					--     -- Additional popup backgrounds
+					highlights.WhichKeyBorder = highlights.FloatBorder
 				end,
 			})
 
