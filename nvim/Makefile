@@ -1,7 +1,6 @@
 OS := $(shell uname)
 
 CONF_DIR ?= $(HOME)/.config/nvim
-PLUGINS_DIR ?= $(HOME)/.local/share/nvim/site/pack/plugins
 
 .PHONY: all
 all: nvim-prereqs nvim-config
