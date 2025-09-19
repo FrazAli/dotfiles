@@ -2,7 +2,7 @@ return {
 	{
 		"gbprod/nord.nvim",
 		lazy = false,
-		priority = 1000,
+		priority = 29,
 		config = function()
 			require("nord").setup({
 				-- your configuration comes here
