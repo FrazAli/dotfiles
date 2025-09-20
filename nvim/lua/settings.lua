@@ -22,7 +22,6 @@ vim.o.splitbelow = true -- Default vertical split
 vim.o.splitright = true -- Default horizontal split
 
 -- General
-vim.o.colorcolumn = "120" -- Column number to mark for recommended max line length
 vim.o.cursorline = true -- Highlight cursor line
 vim.o.errorbells = false -- System bell on error
 vim.o.scrolloff = 3 -- Number of lines offset for scrolling text

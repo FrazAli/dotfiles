@@ -95,4 +95,14 @@ function M.insert_weather()
 	vim.api.nvim_put(vim.fn.split(weather_string, "\n"), "l", true, true)
 end
 
+vim.keymap.set("n", "<leader>cc", function()
+	-- Toggle color column
+	-- Value is the column number to mark for recommended max line length
+	if vim.o.colorcolumn == "" then
+		vim.o.colorcolumn = "120"
+	else
+		vim.o.colorcolumn = ""
+	end
+end, { desc = "Toggle color column" })
+
 return M
