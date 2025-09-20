@@ -103,6 +103,26 @@ return {
 					highlights.WildMenu = { bg = "NONE" }
 					highlights.CmdLine = { bg = "NONE" }
 					highlights.MsgArea = { bg = "NONE" }
+
+					-- Markdown
+					-- Headings
+					highlights["@markup.heading.1"] = { fg = "#f38ba8" }
+					highlights["@markup.heading.2"] = { fg = "#fab387" }
+					highlights["@markup.heading.3"] = { fg = "#f9e2af" }
+					highlights["@markup.heading.4"] = { fg = "#a6e3a1" }
+					highlights["@markup.heading.5"] = { fg = "#89b4fa" }
+					highlights["@markup.heading.6"] = { fg = "#cba6f7" }
+					highlights["RenderMarkdownH1Bg"] = { bg = "#4f2b3a" }
+					highlights["RenderMarkdownH2Bg"] = { bg = "#523c2a" }
+					highlights["RenderMarkdownH3Bg"] = { bg = "#534b3a" }
+					highlights["RenderMarkdownH4Bg"] = { bg = "#374b36" }
+					highlights["RenderMarkdownH5Bg"] = { bg = "#2c3b52" }
+					highlights["RenderMarkdownH6Bg"] = { bg = "#443752" }
+
+					-- Lists and Checkbox
+					highlights["RenderMarkdownBullet"] = { fg = "#89b4fa" }
+					highlights["RenderMarkdownUnchecked"] = { fg = "#89b4fa" }
+					highlights["RenderMarkdownChecked"] = { fg = "#a6e3a1" }
 				end,
 			})
 
