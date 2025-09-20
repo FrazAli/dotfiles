@@ -94,11 +94,15 @@ return {
 					-- Transparent Cmdline
 					highlights.WildMenu = { bg = "NONE" }
 
-					-- Float Border and Background
+					-- Transparent Float Border and Background
 					highlights.FloatBorder = { bg = "NONE", fg = "#616E88" }
 					highlights.NormalFloat = { bg = "NONE" }
 					highlights.FloatTitle = { bg = "NONE" }
 					highlights.TelescopeBorder = { bg = "NONE", fg = "#616E88" }
+
+					-- Status
+					highlights.StatusLine = { bg = "NONE" }
+					highlights.StatusLineNC = { bg = "NONE" }
 
 					-- Transparent command line
 					highlights.WildMenu = { bg = "NONE" }
