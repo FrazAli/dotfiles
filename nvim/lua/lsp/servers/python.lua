@@ -13,13 +13,13 @@ local pyright_cfg = {
 		python = {
 			analysis = {
 				-- pick your poison; remove overrides if you want full Pyright
-				typeCheckingMode = "basic", -- "off" | "basic" | "standard" | "strict"
+				typeCheckingMode = "off", -- "off" | "basic" | "standard" | "strict"
 				diagnosticMode = "openFilesOnly", -- or "workspace"
 				-- Uncomment to quiet Pyright where Ruff already warns:
-				-- diagnosticSeverityOverrides = {
-				--   reportUnusedImport   = "none",
-				--   reportUnusedVariable = "none",
-				-- },
+				diagnosticSeverityOverrides = {
+					reportUnusedImport = "none",
+					reportUnusedVariable = "none",
+				},
 			},
 		},
 	},
