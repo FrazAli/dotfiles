@@ -71,12 +71,14 @@ function M.get_weather()
 	local mean_humidity = weather_data.daily.relative_humidity_2m_mean[1]
 
 	local weather_string = string.format(
-		"- 🌡️ Temperature: %s°C - %s°C\n"
-			.. "- 💨 Wind: %s - %s m/s\n"
-			.. "- 🌞 Forecast: %s %s\n"
-			.. "- 💧 Humidity\n"
-			.. "  - 🌍 Outdoor: %s﹪\n"
-			.. "  - 🏠 Indoor RH (AM/PM): #﹪ / #﹪\n",
+		"| Description             | Value           |\n"
+			.. "| ----------------------- | --------------- |\n"
+			.. "| 🌡️ Temperature          | %s°C - %s°C     |\n"
+			.. "| 💨 Wind                 | %s - %s m/s     |\n"
+			.. "| 🌞 Forecast             | %s %s           |\n"
+			.. "| 💧 Humidity             |                 |\n"
+			.. "|  - 🌍 Outdoor           | %s﹪            |\n"
+			.. "|  - 🏠 Indoor RH (AM/PM) | #﹪ / #﹪       |\n",
 		min_temp,
 		max_temp,
 		min_wind,
