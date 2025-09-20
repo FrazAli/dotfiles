@@ -91,6 +91,10 @@ return {
 					highlights.PmenuThumb = { link = "CursorLine" }
 					highlights.PmenuSbar = { bg = "NONE" }
 
+					-- Backdrop
+					highlights.NormalNC = { bg = "NONE" }
+					highlights.SnacksBackdrop = { bg = "NONE" }
+
 					-- Transparent Cmdline
 					highlights.WildMenu = { bg = "NONE" }
 
