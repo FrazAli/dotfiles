@@ -1,7 +1,7 @@
 TMUX_PLUGINS_DIR := $(HOME)/.tmux/plugins
 
 .PHONY: all
-all: tmux-config tmux-plugins
+all: tmux-plugins
 	@true
 
 .PHONY: tmux-config
