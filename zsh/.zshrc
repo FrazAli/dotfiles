@@ -1,6 +1,15 @@
 # Set default editor
 export EDITOR=nvim
 
+# Resolve this file's real path (handles symlinks) and its directory
+# ${(%):-%N} = current sourced filename; :A = absolute, resolve symlinks; :h = dirname
+_zshrc_path=${${(%):-%N}:A}
+_zshrc_dir=${_zshrc_path:h}
+
+if [[ -f "$_zshrc_dir/load_api_keys.zsh" ]]; then
+  source "$_zshrc_dir/load_api_keys.zsh"
+fi
+
 # Enable vi mode while keeping keys for searching command history
 bindkey -v
 bindkey '^R' history-incremental-search-backward
