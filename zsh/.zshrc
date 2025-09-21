@@ -29,3 +29,18 @@ alias cat="bat --style=plain --theme=Nord"
 # fzf - enables fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# History configuration for persistent history across all panes and windows
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=100000
+export SAVEHIST=100000
+
+# History options
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history
+
