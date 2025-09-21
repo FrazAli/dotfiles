@@ -3,5 +3,6 @@
 # macOS folder settings
 .DS_store
 
-# Gemini context
+# AI context files
 GEMINI.md
+QWEN.md
