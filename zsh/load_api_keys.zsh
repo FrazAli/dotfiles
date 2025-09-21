@@ -1,3 +1,14 @@
+# Load API keys from keychain
+#
+# To add new keys to key keychain use the command example below:
+# security add-generic-password \
+#   -a "$USER" \
+#   -s ANTHROPIC_API_KEY \
+#   -l "Anthropic API Key" \
+#   -w "$ANTHROPIC_API_KEY_VALUE" \
+#   -U \
+#   -T /usr/bin/security
+
 # Resolve dir of this script (works when sourced via a symlinked ~/.zshrc)
 local _this="${${(%):-%N}:A}"
 local _dir="${_this:h}"
