@@ -1,5 +1,3 @@
-# Append the lines below to the existing .zshrc file in the user home directory.
-
 # Set default editor
 export EDITOR=nvim
 
