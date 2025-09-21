@@ -26,3 +26,6 @@ alias k="kubectl"
 alias ll="eza -lTa --icons --git"
 alias cat="bat --style=plain --theme=Nord"
 
+# fzf - enables fzf keybindings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
