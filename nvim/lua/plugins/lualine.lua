@@ -39,7 +39,19 @@ return {
 			sections = {
 				lualine_a = { "filename" },
 				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = {},
+				lualine_c = {
+					{
+						"filename",
+						path = 1,
+						color = { fg = "#616e88", bg = "#NONE" },
+						symbols = {
+							modified = " ",
+							readonly = " ",
+							unnamed = "[No Name]",
+							newfile = "[New]",
+						},
+					},
+				},
 				lualine_x = {},
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
