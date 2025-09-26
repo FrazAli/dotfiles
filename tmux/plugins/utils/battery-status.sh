@@ -1,14 +1,22 @@
 #!/bin/bash
 
-BATT_PERCENT=$(pmset -g batt | grep -Eo "[0-9]*%" | grep -Eo "[0-9]+" | head -n 1)
-if [ -z "$BATT_PERCENT" ]; then
-    BATT_PERCENT="?"
+batt_info=$(pmset -g batt 2>/dev/null)
+
+batt_percent=$(echo "$batt_info" | grep -Eo "[0-9]+%" | head -n 1 | tr -d '%')
+if [ -z "$batt_percent" ]; then
+    batt_percent="?"
 fi
 
-if [ "$BATT_PERCENT" -le 20 ] 2>/dev/null; then
-    BATT_STATUS="🪫${BATT_PERCENT}%"
+if echo "$batt_info" | grep -qi "discharging"; then
+    plugged=""
 else
-    BATT_STATUS="🔋${BATT_PERCENT}%"
+    plugged="⚡️"
 fi
 
-echo "${BATT_STATUS}"
+if [ "$batt_percent" != "?" ] && [ "$batt_percent" -le 20 ] 2>/dev/null; then
+    batt_status="🪫${batt_percent}%"
+else
+    batt_status="🔋${batt_percent}%"
+fi
+
+echo "${plugged}${batt_status}"
