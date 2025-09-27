@@ -66,4 +66,30 @@ case "$OS" in
   *)      cpu="?"; mem="?" ;;
 esac
 
-printf " [C:%s%% M:%s%%]" "${cpu:-0}" "${mem:-0}"
+base_color=$(tmux show-option -gqv @thm_overlay_0 2>/dev/null || true)
+base_color=${base_color:-default}
+reset_color="#[fg=${base_color}]"
+cpu_alert_color='#[fg=#ff0000]'
+mem_alert_color='#[fg=#ff0000]'
+
+format_metric() {
+  local value="$1" threshold="$2" alert_color="$3"
+  if [[ -z "$value" ]]; then
+    value="?"
+  fi
+
+  if [[ $value =~ ^[0-9]+$ ]]; then
+    if (( value >= threshold )); then
+      printf '%s%s%%%s' "$alert_color" "$value" "$reset_color"
+    else
+      printf '%s%%' "$value"
+    fi
+  else
+    printf '%s' "$value"
+  fi
+}
+
+cpu_display=$(format_metric "${cpu:-?}" 90 "$cpu_alert_color")
+mem_display=$(format_metric "${mem:-?}" 85 "$mem_alert_color")
+
+printf ' [C:%s M:%s]' "$cpu_display" "$mem_display"
