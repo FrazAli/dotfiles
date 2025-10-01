@@ -19,7 +19,7 @@ color_prefix=""
 if echo "$batt_info" | grep -qi "discharging"; then
     plugged=""
     (( batt_value >= 0 && batt_value <= 5 )) && { warning="🔴⚠️"; color_prefix="#[fg=#ff0000]"; }
-    (( batt_value >= 5 && batt_value <= 10 )) && { warning="⚠️"; color_prefix="#[fg=orange]"; }
+    (( batt_value > 5 && batt_value <= 10 )) && { warning="⚠️"; color_prefix="#[fg=orange]"; }
 fi
 color_reset=${color_prefix:+#[fg=default]}
 
