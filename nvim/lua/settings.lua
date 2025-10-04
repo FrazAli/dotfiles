@@ -70,7 +70,7 @@ vim.o.undofile = true
 
 -- Set list mode characters
 vim.opt.listchars = {
-	tab = "->",
+	tab = "―→",
 	lead = ".",
 	trail = ".",
 	nbsp = "+",
