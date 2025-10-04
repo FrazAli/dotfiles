@@ -4,5 +4,6 @@
 .DS_store
 
 # AI context files
-GEMINI.md
-QWEN.md
+**/GEMINI.md
+**/QWEN.md
+**/AGENTS.md
