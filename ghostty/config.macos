@@ -12,8 +12,8 @@ macos-icon-screen-color = #00FF00
 # Font configurations
 font-synthetic-style = false
 
-font-family = "Hack Nerd Font Mono"
-font-style = "Bold"
+font-family = "Hack Nerd Font"
+font-style = "Regular"
 
 window-inherit-font-size = false
 font-size = 16
