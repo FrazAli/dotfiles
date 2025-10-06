@@ -92,4 +92,4 @@ format_metric() {
 cpu_display=$(format_metric "${cpu:-?}" 90 "$cpu_alert_color")
 mem_display=$(format_metric "${mem:-?}" 85 "$mem_alert_color")
 
-printf ' |  %s  %s | ' "$cpu_display" "$mem_display"
+printf ' %s  %s' "$cpu_display" "$mem_display"
