@@ -28,7 +28,7 @@ export FZF_DEFAULT_OPTS='--height=40% --cycle --layout=reverse --border --info=i
 
 # Aliases
 alias k="kubectl"
-alias ll="eza -lTa --icons --git"
+alias ll="eza -lTa -L 2 --icons --git"
 alias cat="bat --style=plain --theme=Nord"
 
 # fzf - enables fzf keybindings
