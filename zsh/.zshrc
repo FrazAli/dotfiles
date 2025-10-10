@@ -15,9 +15,24 @@ fi
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
+if [[ -o interactive && -t 0 ]]; then
+  stty -ixon 2>/dev/null  # ensure ^S doesn't trigger terminal flow control
+fi
 
 # Enable starship prompt
-eval "$(starship init zsh)"
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
+
+# Initialize nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add Docker to PATH
+if [[ -d /Applications/Docker.app/Contents/Resources/bin ]]; then
+  path+=("/Applications/Docker.app/Contents/Resources/bin")
+fi
 
 # fzf Options
 export FZF_DEFAULT_OPTS='--height=40% --cycle --layout=reverse --border --info=inline'
@@ -44,6 +59,4 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history
-
-
 
