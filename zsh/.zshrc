@@ -60,3 +60,5 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
+# Zoxide setup
+eval "$(zoxide init zsh --cmd cd)"
