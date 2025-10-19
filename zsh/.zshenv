@@ -19,3 +19,4 @@ fi
 [[ -d "$HOME/.local/bin" ]] && path+=("$HOME/.local/bin")
 [[ -d "$HOME/bin" ]]        && path+=("$HOME/bin")
 export PATH
+. "$HOME/.cargo/env"
