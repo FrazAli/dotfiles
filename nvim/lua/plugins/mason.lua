@@ -26,16 +26,18 @@ return {
 			ensure_installed = {
 				"cssls",
 				"emmet_language_server",
+				"gopls",
 				"html",
 				"lua_ls",
 				"matlab_ls",
 				"pyright",
+				"regal",
 				"rust_analyzer",
 				"svelte",
 				"tailwindcss",
 				"terraformls",
 				"ts_ls",
-				"regal",
+				"zls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			-- disable it to let neovim's builtin 'vim.lsp.enable()' api handle it
