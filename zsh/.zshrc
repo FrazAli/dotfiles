@@ -51,14 +51,14 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 
 # History options
-setopt append_history
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt hist_verify
-setopt inc_append_history
-setopt share_history
+setopt append_history          # append instead of clobbering HISTFILE
+setopt extended_history        # record timestamp and duration metadata
+setopt hist_expire_dups_first  # drop older duplicates before unique entries
+setopt hist_ignore_dups        # skip consecutive duplicate commands
+setopt hist_ignore_space       # keep space-prefixed commands out of history
+setopt hist_verify             # confirm history substitution before running
+setopt inc_append_history      # write each command to HISTFILE immediately
+unsetopt share_history         # keep per-pane history in memory while still sharing the file
 
 # Zoxide setup
 eval "$(zoxide init zsh --cmd cd)"
