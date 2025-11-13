@@ -5,9 +5,9 @@
 #   -a "$USER" \
 #   -s ANTHROPIC_API_KEY \
 #   -l "Anthropic API Key" \
-#   -w "$ANTHROPIC_API_KEY_VALUE" \
 #   -U \
-#   -T /usr/bin/security
+#   -T /usr/bin/security \
+#   -w "<API key value here OR Skip the value to add it securely on the command line >"
 
 # Resolve dir of this script (works when sourced via a symlinked ~/.zshrc)
 local _this="${${(%):-%N}:A}"
