@@ -17,6 +17,7 @@ source "${_dir}/keychain_utils.zsh"
 # Keys to load
 typeset -a api_keys=(
   ANTHROPIC_API_KEY
+  CONTEXT7_API_KEY
   DEEPSEEK_API_KEY
   GOOGLE_API_KEY
   GROQ_API_KEY
