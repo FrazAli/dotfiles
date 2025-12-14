@@ -33,6 +33,12 @@ return {
 			-- default_prog = {"fish"}
 		},
 	},
+	window_padding = {
+		left = 0,
+		right = 0,
+		top = 0,
+		bottom = 0,
+	},
 	enable_tab_bar = false,
 	color_scheme = "Catppuccin Mocha",
 
