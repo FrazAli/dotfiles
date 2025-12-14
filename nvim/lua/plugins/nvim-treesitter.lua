@@ -5,94 +5,57 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
 			"windwp/nvim-ts-autotag",
 		},
 		config = function()
-			-- import nvim-treesitter plugin
-			local treesitter = require("nvim-treesitter.configs")
+			local languages = {
+				"bash",
+				"c",
+				"css",
+				"dockerfile",
+				"gitignore",
+				"go",
+				"html",
+				"javascript",
+				"json",
+				"latex",
+				"lua",
+				"markdown",
+				"markdown_inline",
+				"norg",
+				"python",
+				"query",
+				"regex",
+				"rust",
+				"scss",
+				"svelte",
+				"terraform",
+				"tsx",
+				"typescript",
+				"typst",
+				"vim",
+				"vimdoc",
+				"vue",
+				"xml",
+				"yaml",
+			}
 
-			-- configure treesitter
-			treesitter.setup({ -- enable syntax highlighting
-				highlight = {
-					enable = true,
-					additional_vim_regex_highlighting = false,
-				},
-				-- enable indentation
-				indent = {
-					enable = true,
-					disable = { "markdown" },
-				},
-				-- enable autotagging (w/ nvim-ts-autotag plugin)
-				autotag = {
-					enable = true,
-				},
-				-- Installs a missing parser on opening a new file type.
-				auto_install = true,
-
-				-- ensure these language parsers are installed
-				ensure_installed = {
-					"bash",
-					"c",
-					"css",
-					"dockerfile",
-					"gitignore",
-					"go",
-					"html",
-					"javascript",
-					"json",
-					"latex",
-					"lua",
-					"markdown",
-					"markdown_inline",
-					"norg",
-					"python",
-					"query",
-					"regex",
-					"rust",
-					"scss",
-					"svelte",
-					"terraform",
-					"tsx",
-					"typescript",
-					"typst",
-					"vim",
-					"vimdoc",
-					"vue",
-					"xml",
-					"yaml",
-				},
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						init_selection = "<C-space>",
-						node_incremental = "<C-space>",
-						scope_incremental = false,
-						node_decremental = "<bs>",
-					},
-				},
-				playground = {
-					enable = true,
-					disable = {},
-					updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-					persist_queries = false, -- Whether the query persists across vim sessions
-					keybindings = {
-						toggle_query_editor = "o",
-						toggle_hl_groups = "i",
-						toggle_injected_languages = "t",
-						toggle_anonymous_nodes = "a",
-						toggle_language_display = "I",
-						focus_language = "f",
-						unfocus_language = "F",
-						update = "R",
-						goto_node = "<cr>",
-						show_help = "?",
-					},
-				},
+			-- Configure install dir (optional; defaults to stdpath('data')/site).
+			require("nvim-treesitter").setup({
+				install_dir = vim.fn.stdpath("data") .. "/site",
 			})
 
-			-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-			-- require('ts_context_commentstring').setup {}
+			-- Start treesitter highlighting and set indentexpr for desired filetypes.
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = languages,
+				callback = function(args)
+					pcall(vim.treesitter.start, args.buf)
+					vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				end,
+			})
+
+			-- Kick off async parser install; no-op if already installed.
+			pcall(require("nvim-treesitter").install, languages)
 		end,
 	},
 }
