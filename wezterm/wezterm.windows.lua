@@ -39,8 +39,8 @@ return {
 	-- Background opacity and blur
 	window_background_opacity = 0.6,
 	win32_system_backdrop = "Acrylic",
-	-- Removes th
-	-- window_decorations = 'RESIZE',
+	-- Removes title bar, "RESIZE" allow re-sizing borders, default is "TITLE | RESIZE"
+	window_decorations = "RESIZE",
 	keys = {
 		{
 			key = "F11",
