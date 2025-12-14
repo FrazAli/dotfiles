@@ -40,7 +40,9 @@ cpu_linux() {
   # Simple one-shot from /proc/stat (no sleep), needs previous sample; else 0
   local prev=/tmp/.tmux_cpu_prev
   read -r _ a b c d e f1 g h i _ < /proc/stat || return
-  local idle=$((d+e)) nonidle=$((a+b+c+f1+g+h+i)) total=$((idle+nonidle))
+  local idle=$((d + e))
+  local nonidle=$((a + b + c + f1 + g + h + i))
+  local total=$((idle + nonidle))
   if [[ -f "$prev" ]]; then
     read -r p_total p_idle < "$prev" || true
     local dt=$((total - p_total)) di=$((idle - p_idle))
