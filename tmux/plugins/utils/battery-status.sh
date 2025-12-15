@@ -28,7 +28,9 @@ case $batt_percent in
 esac
 
 is_discharging=false
-if [[ "${batt_status,,}" == discharging* ]]; then
+# Bash 3.2 on macOS lacks ${var,,}; use tr for lowercase comparison
+status_lower=$(printf '%s' "${batt_status:-}" | tr '[:upper:]' '[:lower:]')
+if [[ "$status_lower" == discharging* ]]; then
   is_discharging=true
 fi
 
