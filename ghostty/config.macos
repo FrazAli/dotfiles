@@ -33,3 +33,6 @@ window-padding-y = 5,0
 
 # Enable copy on select
 copy-on-select = true
+
+# force ghostty to use kitty graphics protocol
+term = xterm-kitty
