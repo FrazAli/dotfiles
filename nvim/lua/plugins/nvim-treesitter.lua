@@ -1,10 +1,10 @@
 return {
 	{
-		"nvim-treesitter/nvim-treesitter",
-		priority = 1000,
-		event = { "BufReadPre", "BufNewFile" },
+		"neovim-treesitter/nvim-treesitter",
+		lazy = false,
 		build = ":TSUpdate",
 		dependencies = {
+			"neovim-treesitter/treesitter-parser-registry",
 			"windwp/nvim-ts-autotag",
 		},
 		config = function()
@@ -22,7 +22,6 @@ return {
 				"lua",
 				"markdown",
 				"markdown_inline",
-				"norg",
 				"python",
 				"query",
 				"regex",
