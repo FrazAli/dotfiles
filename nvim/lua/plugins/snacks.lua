@@ -17,13 +17,13 @@ return {
 		image = { enabled = true },
 		indent = {
 			enabled = true,
-			only_scope = true,
+			only_scope = false,
 			hl = { fg = "SnacksIndent" },
 			animate = {
 				enabled = false,
 			},
 			scope = {
-				hl = "SnacksIndentScope",
+				enabled = false,
 			},
 		},
 		input = { enabled = true },
