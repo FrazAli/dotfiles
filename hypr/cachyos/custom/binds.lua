@@ -21,3 +21,8 @@ hl.bind("CONTROL + SUPER + S", hl.dsp.exec_cmd("noctalia msg bar-toggle"))
 -- macOS-style selected-region screenshot shortcut.
 hl.bind("SUPER + SHIFT + 4", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
 
+-- Toggle between the current and previously focused window across workspaces.
+hl.unbind("ALT + Tab")
+hl.bind("ALT + Tab", hl.dsp.focus({ last = true }), {
+    description = "Switch to previously focused window",
+})
