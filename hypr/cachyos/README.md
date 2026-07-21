@@ -6,17 +6,17 @@ ownership of the CachyOS base configuration in `~/.config/hypr`.
 
 ## Install
 
-Create a symlink for the custom module alongside `hyprland.lua`:
+Create one directory symlink for all custom modules:
 
 ```sh
-ln -s "$HOME/p/dotfiles/hypr/cachyos/custom_binds.lua" \
-  "$HOME/.config/hypr/custom_binds.lua"
+ln -s "$HOME/p/dotfiles/hypr/cachyos/custom" \
+  "$HOME/.config/hypr/custom"
 ```
 
 Then add this as the final line of `~/.config/hypr/hyprland.lua`:
 
 ```lua
-require("custom_binds")
+require("custom.init")
 ```
 
 Loading the module last is required. A new, unused shortcut can be bound
