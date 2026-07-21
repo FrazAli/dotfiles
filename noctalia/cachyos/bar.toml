@@ -1,0 +1,7 @@
+# Minimal overrides for CachyOS's default Noctalia bar.
+[bar.default]
+concave_edge_corners = false
+radius_bottom_left = 0
+radius_bottom_right = 0
+radius_top_left = 0
+radius_top_right = 0
