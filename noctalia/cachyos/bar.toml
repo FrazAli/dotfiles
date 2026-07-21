@@ -1,7 +1,48 @@
 # Minimal overrides for CachyOS's default Noctalia bar.
 [bar.default]
+start = [ "active_window", "workspaces" ]
+center = []
+end = [ "group:system", "volume", "bluetooth", "network", "battery", "clock", "session" ]
+background_opacity = 0.5
+widget_spacing = 12
+shadow = false
 concave_edge_corners = false
 radius_bottom_left = 0
 radius_bottom_right = 0
 radius_top_left = 0
 radius_top_right = 0
+
+[[bar.default.capsule_group]]
+id = "system"
+members = [ "cpu", "ram" ]
+
+[widget.active_window]
+display = "icon_only"
+icon_size = 16
+min_length = 0
+
+[widget.workspaces]
+style = "regular"
+display = "id"
+
+[widget.volume]
+device = "output"
+show_label = false
+
+[widget.bluetooth]
+show_label = false
+
+[widget.network]
+show_label = false
+
+[widget.cpu]
+type = "sysmon"
+
+[widget.ram]
+type = "sysmon"
+
+[widget.battery]
+type = "battery"
+
+[widget.clock]
+format = "{:%H:%M}"
