@@ -14,3 +14,6 @@ hl.bind("CONTROL + ALT + L", hl.dsp.window.move({ direction = "r" }))
 
 -- macOS Control + Command + Q lock-screen shortcut.
 hl.bind("CONTROL + SUPER + Q", hl.dsp.exec_cmd("noctalia msg session lock"))
+
+-- Show or hide the Noctalia status bar without replacing SUPER + S.
+hl.bind("CONTROL + SUPER + S", hl.dsp.exec_cmd("noctalia msg bar-toggle"))
