@@ -14,7 +14,7 @@ radius_top_right = 0
 
 [[bar.default.capsule_group]]
 id = "system"
-members = [ "cpu", "ram" ]
+members = [ "temp", "cpu", "ram" ]
 
 [widget.active_window]
 display = "icon_only"
@@ -34,12 +34,6 @@ show_label = false
 
 [widget.network]
 show_label = false
-
-[widget.cpu]
-type = "sysmon"
-
-[widget.ram]
-type = "sysmon"
 
 [widget.battery]
 type = "battery"
