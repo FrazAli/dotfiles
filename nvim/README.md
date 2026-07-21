@@ -1,6 +1,8 @@
-# Apply nvim config. to local host system
+# Apply Neovim config to the local system
 
-Run make to `rsync` plugins to the host system, see the Makefile for more details.
+Run `make` to install the prerequisites and sync the configuration to the host
+system. Linux systems compatible with either Arch or Debian packaging and macOS
+are supported.
 
 ## Editor settings
 

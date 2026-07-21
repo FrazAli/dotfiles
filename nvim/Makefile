@@ -1,4 +1,12 @@
 OS := $(shell uname)
+LINUX_DISTRO := $(shell if [ -r /etc/os-release ]; then \
+	. /etc/os-release; \
+	if printf '%s\n' "$$ID $$ID_LIKE" | grep -qw arch; then \
+		echo arch; \
+	elif printf '%s\n' "$$ID $$ID_LIKE" | grep -qw debian; then \
+		echo debian; \
+	fi; \
+fi)
 
 CONF_DIR ?= $(HOME)/.config/nvim
 
@@ -6,15 +14,19 @@ CONF_DIR ?= $(HOME)/.config/nvim
 all: nvim-prereqs nvim-config
 	@true
 
-.PHONY: prereqs
+.PHONY: nvim-prereqs
 nvim-prereqs:
 ifeq (${OS}, Linux)
-	@echo 'deb [trusted=yes] https://apt.fury.io/ascii-image-converter/ /' | sudo tee /etc/apt/sources.list.d/ascii-image-converter.list
-	@sudo apt-get update
-	@sudo apt-get install --yes ripgrep fd-find rsync
-	@echo "Installing ascii-image-converter ..."
-	@sudo apt-get install --yes ascii-image-converter
-	@sudo rm /etc/apt/sources.list.d/ascii-image-converter.list
+	@case "${LINUX_DISTRO}" in \
+		arch) \
+			sudo pacman -S --needed ripgrep fd rsync tree-sitter-cli imagemagick ghostscript ;; \
+		debian) \
+			sudo apt-get update; \
+			sudo apt-get install --yes ripgrep fd-find rsync ;; \
+		*) \
+			echo "Linux distribution not supported"; \
+			exit 1 ;; \
+	esac
 else ifeq (${OS}, Darwin)
 	@brew update
 	@brew install ripgrep fd rsync
