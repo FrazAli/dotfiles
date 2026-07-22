@@ -2,7 +2,7 @@
 [bar.default]
 start = [ "active_window", "workspaces" ]
 center = []
-end = [ "group:system", "volume", "bluetooth", "network", "battery", "clock", "session" ]
+end = [ "group:system", "volume", "bluetooth", "network", "battery", "notifications", "clock", "session" ]
 background_opacity = 0.5
 widget_spacing = 12
 shadow = false
@@ -28,15 +28,33 @@ display = "id"
 [widget.volume]
 device = "output"
 show_label = false
+color = "on_surface"
 
 [widget.bluetooth]
 show_label = false
+color = "secondary"
 
 [widget.network]
 show_label = false
+color = "secondary"
 
 [widget.battery]
 type = "battery"
+color = "on_surface"
+
+[widget.notifications]
+color = "on_surface"
 
 [widget.clock]
 format = "{:%H:%M}"
+color = "secondary"
+
+[widget.temp]
+color = "on_surface"
+show_label = true
+
+[widget.cpu]
+color = "on_surface"
+
+[widget.ram]
+color = "on_surface"
