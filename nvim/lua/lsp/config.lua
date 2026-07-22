@@ -71,8 +71,9 @@ vim.diagnostic.config({
 	},
 })
 
--- load all server modules and enable them
+-- Load all server modules. mason-lspconfig enables the ones installed by Mason.
 local servers_dir = vim.fn.stdpath("config") .. "/lua/lsp/servers"
+local configured_server_filetypes = {}
 for fname, ftype in vim.fs.dir(servers_dir) do
 	if ftype == "file" and fname:sub(-4) == ".lua" then
 		local modv = require("lsp.servers." .. fname:sub(1, -5))
@@ -92,7 +93,7 @@ for fname, ftype in vim.fs.dir(servers_dir) do
 				on_attach = on_attach,
 			}, cfg or {})
 			vim.lsp.config[name] = final
-			vim.lsp.enable(name)
+			configured_server_filetypes[name] = final.filetypes or {}
 		end
 
 		for _, pair in ipairs(items) do
@@ -100,3 +101,39 @@ for fname, ftype in vim.fs.dir(servers_dir) do
 		end
 	end
 end
+
+-- Mention relevant missing servers once per filetype; installation stays explicit.
+local notified_filetypes = {}
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("LspMissingServer", { clear = true }),
+	callback = function(event)
+		local filetype = vim.bo[event.buf].filetype
+		if filetype == "" or notified_filetypes[filetype] then
+			return
+		end
+
+		local mason_lspconfig = require("mason-lspconfig")
+		local installed = {}
+		for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
+			installed[server] = true
+		end
+
+		local missing = {}
+		for _, server in ipairs(mason_lspconfig.get_available_servers({ filetype = filetype })) do
+			local filetypes = configured_server_filetypes[server]
+			if filetypes and vim.tbl_contains(filetypes, filetype) and not installed[server] then
+				table.insert(missing, server)
+			end
+		end
+
+		if #missing > 0 then
+			notified_filetypes[filetype] = true
+			table.sort(missing)
+			vim.notify(
+				("No LSP installed for %s. Run :LspInstall %s"):format(filetype, table.concat(missing, " ")),
+				vim.log.levels.INFO,
+				{ title = "LSP" }
+			)
+		end
+	end,
+})

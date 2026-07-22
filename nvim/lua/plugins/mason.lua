@@ -1,13 +1,11 @@
 return {
-	"williamboman/mason.nvim",
+	"mason-org/mason.nvim",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		"mason-org/mason-lspconfig.nvim",
 	},
 	config = function()
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
-		local mason_tool_installer = require("mason-tool-installer")
 
 		-- enable mason with nicer icons
 		mason.setup({
@@ -22,39 +20,10 @@ return {
 		})
 
 		mason_lspconfig.setup({
-			-- list of servers for mason to install
-			ensure_installed = {
-				"cssls",
-				"emmet_language_server",
-				"gopls",
-				"html",
-				"lua_ls",
-				"matlab_ls",
-				"pyright",
-				"regal",
-				"rust_analyzer",
-				"svelte",
-				"tailwindcss",
-				"terraformls",
-				"ts_ls",
-				"zls",
-			},
-			-- auto-install configured servers (with lspconfig)
-			-- disable it to let neovim's builtin 'vim.lsp.enable()' api handle it
-			automatic_installation = false,
-		})
-
-		mason_tool_installer.setup({
-			ensure_installed = {
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
-				"ruff", -- python formatter
-				"stylelint", -- css linter
-				"tflint", -- terraform linter
-				"terraform", -- terraform formatter
-				"regal", -- rego linter
-				"opa", -- opa formatter
-			},
+			-- Installation is always explicit via :LspInstall or :MasonInstall.
+			ensure_installed = {},
+			-- Only enable language servers that are already installed by Mason.
+			automatic_enable = true,
 		})
 	end,
 }
