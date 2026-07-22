@@ -62,36 +62,93 @@ mem_linux() {
   ' /proc/meminfo
 }
 
+cpu_temp_linux() {
+  local hwmon name input label zone type raw
+
+  # Prefer CPU-specific hwmon drivers and their package/control temperature.
+  for hwmon in /sys/class/hwmon/hwmon*; do
+    [[ -d "$hwmon" ]] || continue
+    IFS= read -r name < "$hwmon/name" 2>/dev/null || continue
+    case "$name" in
+      coretemp|k10temp|zenpower)
+        for input in "$hwmon"/temp*_input; do
+          [[ -f "$input" ]] || continue
+          label=""
+          IFS= read -r label < "${input%_input}_label" 2>/dev/null || true
+          case "$label" in
+            Package\ id\ *|Tctl|CPU)
+              IFS= read -r raw < "$input" 2>/dev/null || continue
+              [[ "$raw" =~ ^[0-9]+$ ]] || continue
+              printf '%d\n' "$(( (raw + 500) / 1000 ))"
+              return 0
+              ;;
+          esac
+        done
+        ;;
+    esac
+  done
+
+  # Some kernels expose the CPU package only through the thermal subsystem.
+  for zone in /sys/class/thermal/thermal_zone*; do
+    [[ -d "$zone" ]] || continue
+    IFS= read -r type < "$zone/type" 2>/dev/null || continue
+    case "$type" in
+      x86_pkg_temp|cpu-thermal|cpu_thermal|soc_thermal)
+        IFS= read -r raw < "$zone/temp" 2>/dev/null || continue
+        [[ "$raw" =~ ^[0-9]+$ ]] || continue
+        printf '%d\n' "$(( (raw + 500) / 1000 ))"
+        return 0
+        ;;
+    esac
+  done
+
+  return 1
+}
+
 case "$OS" in
   Darwin) cpu=$(cpu_macos); mem=$(mem_macos) ;;
-  Linux)  cpu=$(cpu_linux); mem=$(mem_linux) ;;
+  Linux)  cpu=$(cpu_linux); mem=$(mem_linux); cpu_temp=$(cpu_temp_linux || true) ;;
   *)      cpu="?"; mem="?" ;;
 esac
 
 base_color=$(tmux show-option -gqv @thm_overlay_0 2>/dev/null || true)
 base_color=${base_color:-default}
 reset_color="#[fg=${base_color}]"
-cpu_alert_color='#[fg=#ff0000]'
-mem_alert_color='#[fg=#ff0000]'
+elevated_color='#[fg=#EBCB8B]'
+high_color='#[fg=#D08770]'
+critical_color='#[fg=#BF616A]'
 
 format_metric() {
-  local value="$1" threshold="$2" alert_color="$3"
+  local icon="$1" value="$2" suffix="$3"
+  local elevated="$4" high="$5" critical="$6"
+  local color=""
+
   if [[ -z "$value" ]]; then
     value="?"
   fi
 
   if [[ $value =~ ^[0-9]+$ ]]; then
-    if (( value >= threshold )); then
-      printf '%s%s%%%s' "$alert_color" "$value" "$reset_color"
-    else
-      printf '%s%%' "$value"
+    if (( value >= critical )); then
+      color="$critical_color"
+    elif (( value >= high )); then
+      color="$high_color"
+    elif (( value >= elevated )); then
+      color="$elevated_color"
     fi
+  fi
+
+  if [[ -n "$color" ]]; then
+    printf '%s%s %s%s%s' "$color" "$icon" "$value" "$suffix" "$reset_color"
   else
-    printf '%s' "$value"
+    printf '%s %s%s' "$icon" "$value" "$suffix"
   fi
 }
 
-cpu_display=$(format_metric "${cpu:-?}" 90 "$cpu_alert_color")
-mem_display=$(format_metric "${mem:-?}" 85 "$mem_alert_color")
+cpu_display=$(format_metric '' "${cpu:-?}" '%' 60 80 90)
+mem_display=$(format_metric '' "${mem:-?}" '%' 65 80 90)
 
-printf ' %s  %s' "$cpu_display" "$mem_display"
+if [[ -n "${cpu_temp:-}" ]]; then
+  temp_display=$(format_metric '' "$cpu_temp" '°C' 70 80 85)
+  printf '%s ' "$temp_display"
+fi
+printf '%s %s' "$cpu_display" "$mem_display"
