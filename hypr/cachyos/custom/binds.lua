@@ -49,6 +49,13 @@ hl.bind(
 -- The clipboard panel displaced from SUPER + V by the paste shortcut above.
 hl.bind("CONTROL + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 
+-- The notifications panel displaced from SUPER + A by select-all above.
+hl.unbind("SUPER + N")
+hl.bind(
+	"SUPER + N",
+	hl.dsp.exec_cmd("noctalia msg panel-toggle control-center notifications")
+)
+
 -- Replace the special-workspace shortcuts with a status-bar toggle.
 hl.unbind("SUPER + SHIFT + S")
 hl.unbind("SUPER + S")
