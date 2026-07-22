@@ -13,6 +13,7 @@ hl.bind("CONTROL + ALT + K", hl.dsp.window.move({ direction = "u" }))
 hl.bind("CONTROL + ALT + L", hl.dsp.window.move({ direction = "r" }))
 
 -- macOS Control + Command + Q lock-screen shortcut.
+hl.unbind("SUPER + L")
 hl.bind("CONTROL + SUPER + Q", hl.dsp.exec_cmd("noctalia msg session lock"))
 
 -- macOS-style system-wide select-all, copy, and paste shortcuts.
