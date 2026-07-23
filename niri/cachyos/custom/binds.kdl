@@ -32,6 +32,9 @@ binds {
     Mod+P hotkey-overlay-title="Print in Firefox / Pick Color" {
         spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut p color-picker";
     }
+    Mod+R hotkey-overlay-title="Reload Firefox / Pass Super+R" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut r pass-super";
+    }
 
     // Switch to fullscreen
     Mod+Return hotkey-overlay-title="Toggle Fullscreen"      { fullscreen-window; }

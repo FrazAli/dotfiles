@@ -7,8 +7,9 @@
 #   firefox-shortcut <key> <fallback>
 #
 # When Firefox is focused, the requested key is sent as Ctrl+<key>, giving us
-# Firefox's native new-tab, close-tab, find, bookmarks, address-bar, and print
-# shortcuts. In every other application, the named compositor fallback runs.
+# Firefox's native new-tab, close-tab, find, bookmarks, address-bar, print, and
+# reload shortcuts. In every other application, the named compositor fallback
+# runs.
 #
 # Fallbacks:
 #

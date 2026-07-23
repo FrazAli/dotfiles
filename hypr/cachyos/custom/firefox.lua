@@ -53,3 +53,7 @@ end)
 firefox_shortcut("P", function()
 	return hl.dsp.exec_cmd("hyprpicker -a")
 end)
+
+firefox_shortcut("R", function()
+	return hl.dsp.pass({ window = "activewindow" })
+end)
