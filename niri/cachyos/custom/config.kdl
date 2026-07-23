@@ -2,6 +2,7 @@
 // ~/.config/niri/config.kdl so these modules take precedence.
 
 include "./binds.kdl"
+include "./environment.kdl"
 include "./layout.kdl"
 include "./rules.kdl"
 include "./autostart.kdl"
