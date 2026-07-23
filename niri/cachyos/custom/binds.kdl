@@ -16,6 +16,9 @@ binds {
     // Start new terminal
     Mod+T      hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
 
+    // Close the focused window.
+    Mod+W hotkey-overlay-title="Close Window" { close-window; }
+
     // Switch to fullscreen
     Mod+Return hotkey-overlay-title="Toggle Fullscreen"      { fullscreen-window; }
 
