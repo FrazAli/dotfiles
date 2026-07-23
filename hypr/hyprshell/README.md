@@ -23,6 +23,16 @@ Enable the user service:
 systemctl --user enable --now hyprshell.service
 ```
 
+When another compositor is installed alongside Hyprland, link the service
+override so Hyprshell is skipped in every non-Hyprland graphical session:
+
+```sh
+mkdir -p "$HOME/.config/systemd/user/hyprshell.service.d"
+ln -s "$HOME/p/dotfiles/hypr/hyprshell/systemd/hyprshell.service.d/override.conf" \
+  "$HOME/.config/systemd/user/hyprshell.service.d/override.conf"
+systemctl --user daemon-reload
+```
+
 Validate the configuration with:
 
 ```sh

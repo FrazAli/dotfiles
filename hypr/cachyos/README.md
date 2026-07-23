@@ -6,6 +6,33 @@ ownership of the CachyOS base configuration in `~/.config/hypr`.
 
 ## Install
 
+### Hyprshell window switcher
+
+Install Hyprshell first for a better `Alt+Tab` window switcher across regular
+Hyprland workspaces:
+
+```sh
+paru -S hyprshell-bin
+ln -s "$HOME/p/dotfiles/hypr/hyprshell" "$HOME/.config/hyprshell"
+systemctl --user enable --now hyprshell.service
+```
+
+When another compositor is installed alongside Hyprland, also install the
+tracked systemd override. The upstream service's desktop check still starts
+Hyprshell in non-Hyprland graphical sessions; this override skips it cleanly:
+
+```sh
+mkdir -p "$HOME/.config/systemd/user/hyprshell.service.d"
+ln -s "$HOME/p/dotfiles/hypr/hyprshell/systemd/hyprshell.service.d/override.conf" \
+  "$HOME/.config/systemd/user/hyprshell.service.d/override.conf"
+systemctl --user daemon-reload
+```
+
+See [`../hyprshell/README.md`](../hyprshell/README.md) for validation and
+configuration details.
+
+### Personal overrides
+
 Create one directory symlink for all custom modules:
 
 ```sh
