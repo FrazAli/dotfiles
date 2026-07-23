@@ -16,41 +16,10 @@ hl.bind("CONTROL + ALT + L", hl.dsp.window.move({ direction = "r" }))
 hl.unbind("SUPER + L")
 hl.bind("CONTROL + SUPER + Q", hl.dsp.exec_cmd("noctalia msg session lock"))
 
--- macOS-style system-wide select-all, copy, and paste shortcuts.
-hl.unbind("SUPER + A")
-hl.bind(
-	"SUPER + A",
-	hl.dsp.send_shortcut({
-		mods = "CTRL",
-		key = "A",
-		window = "activewindow",
-	})
-)
+-- Keep CONTROL + V available for the SUPER + V global keyd paste mapping.
+hl.bind("CONTROL + ALT + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 
-hl.unbind("SUPER + C")
-hl.bind(
-	"SUPER + C",
-	hl.dsp.send_shortcut({
-		mods = "CTRL",
-		key = "C",
-		window = "activewindow",
-	})
-)
-
-hl.unbind("SUPER + V")
-hl.bind(
-	"SUPER + V",
-	hl.dsp.send_shortcut({
-		mods = "CTRL",
-		key = "V",
-		window = "activewindow",
-	})
-)
-
--- The clipboard panel displaced from SUPER + V by the paste shortcut above.
-hl.bind("CONTROL + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
-
--- The notifications panel displaced from SUPER + A by select-all above.
+-- Open the notifications panel.
 hl.unbind("SUPER + N")
 hl.bind(
 	"SUPER + N",
