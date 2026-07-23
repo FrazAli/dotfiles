@@ -13,11 +13,25 @@ binds {
     }
 
 
-    // Start new terminal
-    Mod+T      hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
-
-    // Close the focused window.
-    Mod+W hotkey-overlay-title="Close Window" { close-window; }
+    // macOS-style Firefox shortcuts with their normal compositor fallbacks.
+    Mod+T hotkey-overlay-title="New Firefox Tab / Open Ghostty" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut t terminal";
+    }
+    Mod+W hotkey-overlay-title="Close Firefox Tab / Close Window" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut w close-window";
+    }
+    Mod+F hotkey-overlay-title="Find in Firefox / Toggle Fullscreen" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut f fullscreen";
+    }
+    Mod+B hotkey-overlay-title="Firefox Bookmarks / Pass Super+B" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut b pass-super";
+    }
+    Mod+L hotkey-overlay-title="Firefox Address Bar / Lock Screen" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut l lock-screen";
+    }
+    Mod+P hotkey-overlay-title="Print in Firefox / Pick Color" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut p color-picker";
+    }
 
     // Switch to fullscreen
     Mod+Return hotkey-overlay-title="Toggle Fullscreen"      { fullscreen-window; }

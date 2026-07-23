@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+key="${1:?missing shortcut key}"
+fallback="${2:?missing fallback action}"
+
+app_id="$(niri msg -j focused-window 2>/dev/null | jq -r '.app_id // ""')"
+app_id="${app_id,,}"
+
+case "$app_id" in
+    firefox|firefox-*|org.mozilla.firefox)
+        wtype -M ctrl -k "$key" -m ctrl
+        ;;
+    *)
+        case "$fallback" in
+            terminal)
+                ghostty
+                ;;
+            close-window)
+                niri msg action close-window
+                ;;
+            fullscreen)
+                niri msg action fullscreen-window
+                ;;
+            pass-super)
+                niri msg action toggle-keyboard-shortcuts-inhibit
+                if ! wtype -M logo -k "$key" -m logo; then
+                    niri msg action toggle-keyboard-shortcuts-inhibit
+                    exit 1
+                fi
+                niri msg action toggle-keyboard-shortcuts-inhibit
+                ;;
+            lock-screen)
+                qs -c noctalia-shell ipc call lockScreen lock
+                ;;
+            color-picker)
+                geometry="$(slurp -p -f '%x,%y 1x1')" || exit 0
+                color="$(
+                    grim -g "$geometry" -t ppm - |
+                        magick ppm:- -depth 8 -format '#%[hex:p{0,0}]' info:
+                )"
+                printf '%s' "$color" | wl-copy
+                notify-send "Color copied" "$color"
+                ;;
+            *)
+                printf 'Unknown fallback action: %s\n' "$fallback" >&2
+                exit 2
+                ;;
+        esac
+        ;;
+esac
