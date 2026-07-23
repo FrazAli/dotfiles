@@ -30,3 +30,7 @@ niri validate
 
 Niri watches the entrypoint and all included files, so valid changes are
 reloaded automatically.
+
+The overrides set Ghostty as the session terminal. To make Noctalia launch
+terminal applications with Ghostty as well, set its terminal command to
+`ghostty -e` in the Noctalia launcher settings.
