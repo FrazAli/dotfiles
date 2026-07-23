@@ -1,1 +1,10 @@
 // Personal layout overrides.
+
+layout {
+    gaps 1
+
+    focus-ring {
+        on
+        width 1
+    }
+}
