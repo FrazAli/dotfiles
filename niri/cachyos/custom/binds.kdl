@@ -26,8 +26,8 @@ binds {
     Mod+B hotkey-overlay-title="Firefox Bookmarks / Pass Super+B" {
         spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut b pass-super";
     }
-    Mod+L hotkey-overlay-title="Firefox Address Bar / Lock Screen" {
-        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut l lock-screen";
+    Mod+L hotkey-overlay-title="Firefox Address Bar / Focus Column Right" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut l focus-column-right";
     }
     Mod+P hotkey-overlay-title="Print in Firefox / Pick Color" {
         spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut p color-picker";
@@ -41,12 +41,22 @@ binds {
     Mod+J { focus-window-or-workspace-down; }
     Mod+K { focus-window-or-workspace-up; }
 
+    // Move only the focused window to an adjacent workspace.
+    Mod+Shift+J { move-window-to-workspace-down; }
+    Mod+Shift+K { move-window-to-workspace-up; }
+
     // Rectangle-style window manipulation.
-    Ctrl+Alt+Return { fullscreen-window; }
-    Ctrl+Alt+H      { move-column-left; }
+    Ctrl+Alt+Return {
+        spawn-sh "$HOME/.config/niri/custom/scripts/maximize-window";
+    }
+    Ctrl+Alt+H {
+        spawn-sh "$HOME/.config/niri/custom/scripts/half-column left";
+    }
     Ctrl+Alt+J      { move-window-down; }
     Ctrl+Alt+K      { move-window-up; }
-    Ctrl+Alt+L      { move-column-right; }
+    Ctrl+Alt+L {
+        spawn-sh "$HOME/.config/niri/custom/scripts/half-column right";
+    }
     Ctrl+Alt+Space  { toggle-window-floating; }
     Ctrl+Alt+Minus  hotkey-overlay-title="Decrease Column Width" { set-column-width "-10%"; }
     Ctrl+Alt+Equal  hotkey-overlay-title="Increase Column Width" { set-column-width "+10%"; }

@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+# Approximate Rectangle's left-half and right-half actions in Niri by arranging
+# the focused column and its neighbor as an equal-width pair.
+#
+# Usage:
+#
+#   half-column left
+#   half-column right
+#
+# The focused column is resized to 50% and moved in the requested direction.
+# The adjacent column is then resized to 50%, the original window is focused
+# again, and the visible pair is centered.
+#
+# This follows Niri's scrolling-column model: left and right describe the
+# column's position relative to its neighbor, not an absolute screen half. If
+# no adjacent column exists, the lone 50%-wide column remains centered.
+#
+# This is a script because a Niri keybinding accepts only one action.
+
+set -euo pipefail
+
+direction="${1:?missing direction}"
+
+case "$direction" in
+    left)
+        adjacent_direction="right"
+        ;;
+    right)
+        adjacent_direction="left"
+        ;;
+    *)
+        printf 'Unknown direction: %s\n' "$direction" >&2
+        exit 2
+        ;;
+esac
+
+focused_window_id="$(niri msg -j focused-window | jq -r '.id')"
+
+niri msg action set-column-width "50%"
+niri msg action "move-column-$direction"
+niri msg action "focus-column-$adjacent_direction"
+
+adjacent_window_id="$(niri msg -j focused-window | jq -r '.id')"
+if [[ "$adjacent_window_id" != "$focused_window_id" ]]; then
+    niri msg action set-column-width "50%"
+    niri msg action focus-window --id "$focused_window_id"
+fi
+
+niri msg action center-visible-columns

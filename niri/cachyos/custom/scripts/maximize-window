@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Approximate Rectangle's maximize action without entering true fullscreen.
+#
+# The focused window is resized to 100% of Niri's usable width and height and
+# then centered. It stays in its current tiled or floating layout, so the
+# Noctalia bar remains visible and applications do not enter fullscreen mode.
+#
+# The window id is captured first so every IPC action targets the same window
+# even if focus changes while the sequence is running.
+#
+# This is a script because a Niri keybinding accepts only one action.
+
+set -euo pipefail
+
+window_id="$(niri msg -j focused-window | jq -r '.id')"
+
+niri msg action set-window-width --id "$window_id" "100%"
+niri msg action set-window-height --id "$window_id" "100%"
+niri msg action center-window --id "$window_id"
