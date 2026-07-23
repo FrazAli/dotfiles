@@ -1,0 +1,7 @@
+// Personal CachyOS-specific overrides. Keep this include last in the main
+// ~/.config/niri/config.kdl so these modules take precedence.
+
+include "./binds.kdl"
+include "./layout.kdl"
+include "./rules.kdl"
+include "./autostart.kdl"

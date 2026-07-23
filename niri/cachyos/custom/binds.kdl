@@ -1,0 +1,4 @@
+// Personal keybindings.
+//
+// A binding declared here overrides the same key combination from an earlier
+// include while leaving all unrelated CachyOS bindings intact.
