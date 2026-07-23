@@ -1,5 +1,27 @@
 #!/usr/bin/env bash
 
+# On-demand dispatcher for macOS-style Super shortcuts.
+#
+# Niri starts this script with:
+#
+#   firefox-shortcut <key> <fallback>
+#
+# When Firefox is focused, the requested key is sent as Ctrl+<key>, giving us
+# Firefox's native new-tab, close-tab, find, bookmarks, address-bar, and print
+# shortcuts. In every other application, the named compositor fallback runs.
+#
+# Fallbacks:
+#
+#   terminal           Open Ghostty.
+#   close-window       Close the focused Niri window.
+#   fullscreen         Toggle true fullscreen.
+#   pass-super         Forward Super+<key> to the focused application.
+#   focus-column-right Focus the column to the right.
+#   color-picker       Pick a screen pixel and copy its hex color.
+#
+# pass-super temporarily enables Niri's keyboard-shortcut inhibition. Without
+# it, the forwarded virtual Super key would trigger this dispatcher recursively.
+
 set -euo pipefail
 
 key="${1:?missing shortcut key}"
@@ -10,6 +32,8 @@ app_id="${app_id,,}"
 
 case "$app_id" in
     firefox|firefox-*|org.mozilla.firefox)
+        # wtype uses a virtual keyboard, so Firefox receives a normal Ctrl
+        # accelerator rather than the Super binding consumed by Niri.
         wtype -M ctrl -k "$key" -m ctrl
         ;;
     *)
@@ -31,8 +55,8 @@ case "$app_id" in
                 fi
                 niri msg action toggle-keyboard-shortcuts-inhibit
                 ;;
-            lock-screen)
-                qs -c noctalia-shell ipc call lockScreen lock
+            focus-column-right)
+                niri msg action focus-column-right
                 ;;
             color-picker)
                 geometry="$(slurp -p -f '%x,%y 1x1')" || exit 0
