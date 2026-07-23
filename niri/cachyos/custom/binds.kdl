@@ -2,3 +2,54 @@
 //
 // A binding declared here overrides the same key combination from an earlier
 // include while leaving all unrelated CachyOS bindings intact.
+
+binds {
+    // Match the Hyprland Noctalia launcher shortcut.
+    Super+Space hotkey-overlay-title="Application Launcher" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle";
+    }
+    Super+Period hotkey-overlay-title="Emoji Picker" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "emoji";
+    }
+
+
+    // Start new terminal
+    Mod+T      hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
+
+    // Switch to fullscreen
+    Mod+Return hotkey-overlay-title="Toggle Fullscreen"      { fullscreen-window; }
+
+    // Vim-style navigation continues into the adjacent workspace when there
+    // is no next window in the focused column.
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
+
+    // Rectangle-style window manipulation.
+    Ctrl+Alt+Return { fullscreen-window; }
+    Ctrl+Alt+H      { move-column-left; }
+    Ctrl+Alt+J      { move-window-down; }
+    Ctrl+Alt+K      { move-window-up; }
+    Ctrl+Alt+L      { move-column-right; }
+    Ctrl+Alt+Space  { toggle-window-floating; }
+    Ctrl+Alt+Minus  hotkey-overlay-title="Decrease Column Width" { set-column-width "-10%"; }
+    Ctrl+Alt+Equal  hotkey-overlay-title="Increase Column Width" { set-column-width "+10%"; }
+
+    // macOS-style lock-screen shortcut.
+    Ctrl+Super+Q hotkey-overlay-title="Lock Screen" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock";
+    }
+
+    // Noctalia panels and bar.
+    Ctrl+Alt+V hotkey-overlay-title="Clipboard History" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard";
+    }
+    Super+N hotkey-overlay-title="Notification History" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleHistory";
+    }
+    Super+S hotkey-overlay-title="Toggle Bar" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "bar" "toggle";
+    }
+
+    // macOS-style selected-region screenshot.
+    Super+Shift+4 hotkey-overlay-title="Screenshot Region" { screenshot; }
+}
