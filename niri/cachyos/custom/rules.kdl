@@ -4,3 +4,14 @@ window-rule {
     geometry-corner-radius 0
     clip-to-geometry true
 }
+
+// Make floating windows easier to distinguish from the tiled layout while
+// retaining the default CachyOS focus-ring colors.
+window-rule {
+    match is-floating=true
+
+    focus-ring {
+        on
+        width 3
+    }
+}
