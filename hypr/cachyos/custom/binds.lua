@@ -33,3 +33,12 @@ hl.bind("SUPER + S", hl.dsp.exec_cmd("noctalia msg bar-toggle"))
 
 -- macOS-style selected-region screenshot shortcut.
 hl.bind("SUPER + SHIFT + 4", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
+
+-- Searchable overlay of all active Hyprland keybindings.
+hl.bind(
+	"SUPER + SHIFT + Escape",
+	hl.dsp.exec_cmd(
+		"ghostty --title='Hyprland Shortcuts' -e "
+			.. "$HOME/.config/hypr/custom/scripts/show-keybinds"
+	)
+)

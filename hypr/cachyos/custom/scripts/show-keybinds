@@ -1,0 +1,106 @@
+#!/usr/bin/env bash
+
+# Searchable view of the keybindings currently loaded by Hyprland.
+#
+# The list comes from `hyprctl binds`, so it includes both CachyOS defaults and
+# our custom bindings. Hyprland's JSON output is currently malformed for Lua
+# callbacks, hence the small plain-text parser below. Type to filter the list,
+# use the arrow keys to navigate, and press Escape or Enter to close the viewer.
+#
+# Pass --print to write the formatted list to stdout without opening fzf.
+
+set -euo pipefail
+
+format_bindings() {
+    hyprctl binds |
+        awk '
+            function has_modifier(mask, flag) {
+                return int(mask / flag) % 2 == 1
+            }
+
+            function reset_binding() {
+                modmask = 0
+                key = ""
+                description = ""
+                dispatcher = ""
+                arg = ""
+            }
+
+            function print_binding(    shortcut, action) {
+                if (key == "")
+                    return
+
+                shortcut = ""
+                if (has_modifier(modmask, 4))
+                    shortcut = shortcut "Ctrl+"
+                if (has_modifier(modmask, 8))
+                    shortcut = shortcut "Alt+"
+                if (has_modifier(modmask, 1))
+                    shortcut = shortcut "Shift+"
+                if (has_modifier(modmask, 64))
+                    shortcut = shortcut "Super+"
+                shortcut = shortcut key
+
+                action = description
+                if (action == "") {
+                    if (dispatcher == "__lua")
+                        action = "Hyprland action"
+                    else if (arg != "")
+                        action = dispatcher " " arg
+                    else
+                        action = dispatcher
+                }
+
+                printf "%s\t%s\n", shortcut, action
+            }
+
+            /^bind/ {
+                print_binding()
+                reset_binding()
+                next
+            }
+
+            $1 == "modmask:" {
+                modmask = $2
+                next
+            }
+            $1 == "key:" {
+                key = $2
+                next
+            }
+            $1 == "description:" {
+                sub(/^[[:space:]]*description:[[:space:]]*/, "")
+                description = $0
+                next
+            }
+            $1 == "dispatcher:" {
+                dispatcher = $2
+                next
+            }
+            $1 == "arg:" {
+                sub(/^[[:space:]]*arg:[[:space:]]*/, "")
+                arg = $0
+                next
+            }
+
+            END {
+                print_binding()
+            }
+        ' |
+        sort -f
+}
+
+if [[ "${1:-}" == "--print" ]]; then
+    format_bindings
+    exit
+fi
+
+format_bindings |
+    fzf \
+        --delimiter=$'\t' \
+        --with-nth=1,2 \
+        --layout=reverse \
+        --border=rounded \
+        --info=inline \
+        --prompt='Shortcut> ' \
+        --header='Type to filter • Esc/Enter to close'
