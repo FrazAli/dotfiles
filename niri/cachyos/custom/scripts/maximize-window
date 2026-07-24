@@ -2,8 +2,9 @@
 
 # Approximate Rectangle's maximize action without entering true fullscreen.
 #
-# The focused window is resized to 100% of Niri's usable width and height and
-# then centered. It stays in its current tiled or floating layout, so the
+# Tiled windows are resized to 100% of Niri's usable width and height and then
+# centered. Floating windows use Niri's atomic maximize-to-edges action so a
+# window placed by half-column reaches full size in a single invocation. The
 # Noctalia bar remains visible and applications do not enter fullscreen mode.
 #
 # The window id is captured first so every IPC action targets the same window
@@ -13,8 +14,14 @@
 
 set -euo pipefail
 
-window_id="$(niri msg -j focused-window | jq -r '.id')"
+focused_window="$(niri msg -j focused-window)"
+window_id="$(jq -r '.id' <<< "$focused_window")"
+is_floating="$(jq -r '.is_floating' <<< "$focused_window")"
 
-niri msg action set-window-width --id "$window_id" "100%"
-niri msg action set-window-height --id "$window_id" "100%"
-niri msg action center-window --id "$window_id"
+if [[ "$is_floating" == true ]]; then
+    niri msg action maximize-window-to-edges --id "$window_id"
+else
+    niri msg action set-window-width --id "$window_id" "100%"
+    niri msg action set-window-height --id "$window_id" "100%"
+    niri msg action center-window --id "$window_id"
+fi
