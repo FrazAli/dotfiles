@@ -1,0 +1,6 @@
+// Keep overview intentional: use Mod+O instead of the top-right hot corner.
+gestures {
+    hot-corners {
+        off
+    }
+}

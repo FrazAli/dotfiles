@@ -17,6 +17,20 @@
       showText: false
     }),
     {id: "Spacer", width: 6},
+    {
+      id: "CustomButton",
+      icon: "layout-grid",
+      showIcon: true,
+      iconPosition: "left",
+      leftClickExec: "niri msg action toggle-overview",
+      textCommand: "",
+      hideMode: "alwaysExpanded",
+      showExecTooltip: false,
+      showTextTooltip: false,
+      generalTooltipText: "Toggle overview",
+      ipcIdentifier: "niri-overview"
+    },
+    {id: "Spacer", width: 6},
     $by_id.Workspace
   ]
 | .bar.widgets.center = []
