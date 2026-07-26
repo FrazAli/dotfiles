@@ -15,13 +15,10 @@ window-rule {
     }
 }
 
-// Make floating windows easier to distinguish from the tiled layout while
-// retaining the default CachyOS focus-ring colors.
+// Slightly fade unfocused windows while preserving Ghostty's own transparency.
 window-rule {
-    match is-floating=true
+    match is-focused=false
+    exclude app-id="^com\\.mitchellh\\.ghostty$"
 
-    focus-ring {
-        on
-        width 3
-    }
+    opacity 0.94
 }
