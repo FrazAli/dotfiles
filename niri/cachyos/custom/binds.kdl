@@ -70,6 +70,9 @@ binds {
     }
 
     // Noctalia panels and bar.
+    Super+Comma hotkey-overlay-title="Settings" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle";
+    }
     Ctrl+Alt+V hotkey-overlay-title="Clipboard History" {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard";
     }
