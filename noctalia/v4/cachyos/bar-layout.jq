@@ -5,6 +5,8 @@
    | map({key: .id, value: .})
    | from_entries) as $by_id
 | .general.enableShadows = false
+| .colorSchemes.useWallpaperColors = false
+| .colorSchemes.predefinedScheme = "Nord-Readable-Hover"
 | .bar.backgroundOpacity = 0.5
 | .bar.capsuleOpacity = 0
 | .bar.enableExclusionZoneInset = false
