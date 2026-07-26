@@ -5,6 +5,16 @@ window-rule {
     clip-to-geometry true
 }
 
+// Ghostty 1.3 does not request Niri's background-effect protocol itself.
+// Keep opacity in Ghostty and let Niri blur the content behind the window.
+window-rule {
+    match app-id="^com\\.mitchellh\\.ghostty$"
+
+    background-effect {
+        blur true
+    }
+}
+
 // Make floating windows easier to distinguish from the tiled layout while
 // retaining the default CachyOS focus-ring colors.
 window-rule {
