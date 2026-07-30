@@ -35,7 +35,33 @@ binds {
     Mod+R hotkey-overlay-title="Reload Firefox / Pass Super+R" {
         spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut r pass-super";
     }
-
+    Mod+1 repeat=false hotkey-overlay-title="Firefox Tab 1 / Workspace 1" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut 1 workspace-1";
+    }
+    Mod+2 repeat=false hotkey-overlay-title="Firefox Tab 2 / Workspace 2" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut 2 workspace-2";
+    }
+    Mod+3 repeat=false hotkey-overlay-title="Firefox Tab 3 / Workspace 3" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut 3 workspace-3";
+    }
+    Mod+4 repeat=false hotkey-overlay-title="Firefox Tab 4 / Workspace 4" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut 4 workspace-4";
+    }
+    Mod+5 repeat=false hotkey-overlay-title="Firefox Tab 5 / Workspace 5" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut 5 workspace-5";
+    }
+    Mod+6 repeat=false hotkey-overlay-title="Firefox Tab 6 / Workspace 6" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut 6 workspace-6";
+    }
+    Mod+7 repeat=false hotkey-overlay-title="Firefox Tab 7 / Workspace 7" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut 7 workspace-7";
+    }
+    Mod+8 repeat=false hotkey-overlay-title="Firefox Tab 8 / Workspace 8" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut 8 workspace-8";
+    }
+    Mod+9 repeat=false hotkey-overlay-title="Firefox Last Tab / Workspace 9" {
+        spawn-sh "$HOME/.config/niri/custom/scripts/firefox-shortcut 9 workspace-9";
+    }
     // Switch to fullscreen
     Mod+Return hotkey-overlay-title="Toggle Fullscreen"      { fullscreen-window; }
 

@@ -6,6 +6,9 @@
 local firefox_classes = {
 	["firefox"] = true,
 	["firefox-developer-edition"] = true,
+	["firefoxdeveloperedition"] = true,
+	["org.mozilla.firefox"] = true,
+	["org.mozilla.firefoxdeveloperedition"] = true,
 }
 
 local function firefox_is_active()
@@ -13,14 +16,14 @@ local function firefox_is_active()
 	return window ~= nil and firefox_classes[string.lower(window.class)] == true
 end
 
-local function firefox_shortcut(key, fallback)
+local function firefox_shortcut(key, fallback, firefox_mods)
 	local shortcut = "SUPER + " .. key
 
 	hl.unbind(shortcut)
 	hl.bind(shortcut, function()
 		if firefox_is_active() then
 			hl.dispatch(hl.dsp.send_shortcut({
-				mods = "CTRL",
+				mods = firefox_mods or "CTRL",
 				key = key,
 				window = "activewindow",
 			}))
@@ -57,3 +60,11 @@ end)
 firefox_shortcut("R", function()
 	return hl.dsp.pass({ window = "activewindow" })
 end)
+
+-- Firefox uses Ctrl+1 through Ctrl+8 to select a tab and Ctrl+9 for the last
+-- tab. Outside Firefox these retain the CachyOS workspace shortcuts.
+for workspace = 1, 9 do
+	firefox_shortcut(tostring(workspace), function()
+		return hl.dsp.exec_cmd("hyprctl dispatch workspace " .. workspace)
+	end, "ALT")
+end

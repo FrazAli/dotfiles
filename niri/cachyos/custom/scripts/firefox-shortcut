@@ -7,9 +7,9 @@
 #   firefox-shortcut <key> <fallback>
 #
 # When Firefox is focused, the requested key is sent as Ctrl+<key>, giving us
-# Firefox's native new-tab, close-tab, find, bookmarks, address-bar, print, and
-# reload shortcuts. In every other application, the named compositor fallback
-# runs.
+# Firefox's native new-tab, close-tab, find, bookmarks, address-bar, print,
+# reload, and tab-selection shortcuts. In every other application, the named
+# compositor fallback runs.
 #
 # Fallbacks:
 #
@@ -19,6 +19,7 @@
 #   pass-super         Forward Super+<key> to the focused application.
 #   focus-column-right Focus the column to the right.
 #   color-picker       Pick a screen pixel and copy its hex color.
+#   workspace-N        Focus numbered workspace N.
 #
 # pass-super temporarily enables Niri's keyboard-shortcut inhibition. Without
 # it, the forwarded virtual Super key would trigger this dispatcher recursively.
@@ -32,10 +33,14 @@ app_id="$(niri msg -j focused-window 2>/dev/null | jq -r '.app_id // ""')"
 app_id="${app_id,,}"
 
 case "$app_id" in
-    firefox|firefox-*|org.mozilla.firefox)
-        # wtype uses a virtual keyboard, so Firefox receives a normal Ctrl
-        # accelerator rather than the Super binding consumed by Niri.
-        wtype -M ctrl -k "$key" -m ctrl
+    *firefox*)
+        # Firefox on Linux uses Alt+1 through Alt+9 for numbered tabs. Its
+        # letter accelerators use Ctrl.
+        if [[ "$key" =~ ^[1-9]$ ]]; then
+            wtype -M alt -k "$key" -m alt
+        else
+            wtype -M ctrl -k "$key" -m ctrl
+        fi
         ;;
     *)
         case "$fallback" in
@@ -67,6 +72,9 @@ case "$app_id" in
                 )"
                 printf '%s' "$color" | wl-copy
                 notify-send "Color copied" "$color"
+                ;;
+            workspace-[1-9])
+                niri msg action focus-workspace "${fallback#workspace-}"
                 ;;
             *)
                 printf 'Unknown fallback action: %s\n' "$fallback" >&2
