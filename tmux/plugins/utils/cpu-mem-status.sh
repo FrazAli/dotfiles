@@ -36,6 +36,26 @@ mem_macos() {
     }'
 }
 
+cpu_temp_macos() {
+  local temp
+
+  if command -v macmon >/dev/null 2>&1; then
+    temp=$(
+      macmon pipe -s 1 -i 250 2>/dev/null \
+        | sed -n 's/.*"cpu_temp_avg":[[:space:]]*\([0-9.][0-9.]*\).*/\1/p' \
+        | awk '{ printf "%.0f\n", $1; exit }'
+    ) || true
+    [[ -n "$temp" ]] && { echo "$temp"; return 0; }
+  fi
+
+  if command -v osx-cpu-temp >/dev/null 2>&1; then
+    temp=$(osx-cpu-temp -C -T 2>/dev/null | awk '{ printf "%.0f\n", $1; exit }') || true
+    [[ -n "$temp" ]] && { echo "$temp"; return 0; }
+  fi
+
+  return 1
+}
+
 cpu_linux() {
   # Simple one-shot from /proc/stat (no sleep), needs previous sample; else 0
   local prev=/tmp/.tmux_cpu_prev
@@ -106,7 +126,7 @@ cpu_temp_linux() {
 }
 
 case "$OS" in
-  Darwin) cpu=$(cpu_macos); mem=$(mem_macos) ;;
+  Darwin) cpu=$(cpu_macos); mem=$(mem_macos); cpu_temp=$(cpu_temp_macos || true) ;;
   Linux)  cpu=$(cpu_linux); mem=$(mem_linux); cpu_temp=$(cpu_temp_linux || true) ;;
   *)      cpu="?"; mem="?" ;;
 esac

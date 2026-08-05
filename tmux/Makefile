@@ -1,11 +1,21 @@
+OS := $(shell uname)
 TMUX_PLUGINS_DIR := $(HOME)/.tmux/plugins
 REQUIRED_PLUGIN_FILES := \
 	plugins/tmux-resurrect/resurrect.tmux \
 	plugins/tmux-continuum/continuum.tmux
 
 .PHONY: all
-all: tmux-plugins
+all: tmux-prereqs tmux-plugins
 	@true
+
+.PHONY: tmux-prereqs
+tmux-prereqs:
+ifeq (${OS}, Darwin)
+	@brew update
+	@brew install macmon
+else
+	@true
+endif
 
 .PHONY: tmux-config
 tmux-config:
