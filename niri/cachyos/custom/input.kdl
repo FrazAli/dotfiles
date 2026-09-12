@@ -1,0 +1,8 @@
+// Keyboard layouts shared by Niri and Noctalia's layout switcher.
+input {
+    keyboard {
+        xkb {
+            layout "us,se"
+        }
+    }
+}

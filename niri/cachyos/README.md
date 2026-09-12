@@ -31,6 +31,10 @@ niri validate
 Niri watches the entrypoint and all included files, so valid changes are
 reloaded automatically.
 
+Keyboard layouts are US English and Swedish. Press `Ctrl+Space` to switch
+between them. For a clickable indicator, add Noctalia's **Keyboard Layout**
+widget in its bar settings; clicking the widget cycles the layouts.
+
 The overrides set Ghostty as the session terminal. To make Noctalia launch
 terminal applications with Ghostty as well, set its terminal command to
 `ghostty -e` in the Noctalia launcher settings.

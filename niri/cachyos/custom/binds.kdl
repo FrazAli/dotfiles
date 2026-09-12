@@ -4,6 +4,10 @@
 // include while leaving all unrelated CachyOS bindings intact.
 
 binds {
+    Ctrl+Space repeat=false hotkey-overlay-title="Switch Keyboard Language" {
+        switch-layout "next";
+    }
+
     // Match the Hyprland Noctalia launcher shortcut.
     Super+Space hotkey-overlay-title="Application Launcher" {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle";
