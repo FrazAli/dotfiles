@@ -1,1 +1,2 @@
-// Personal startup applications.
+// Keep Niri's migrated Noctalia profile separate from Hyprland's settings.
+spawn-sh-at-startup "NOCTALIA_CONFIG_HOME=\"$HOME/.config/niri/custom/noctalia-profile\" NOCTALIA_STATE_HOME=\"${XDG_STATE_HOME:-$HOME/.local/state}/niri\" noctalia --daemon"

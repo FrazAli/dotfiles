@@ -9,7 +9,14 @@ The bar uses Noctalia's auto-hide mode: it retracts three seconds after the
 pointer leaves and reappears when the pointer reaches the screen edge. The
 existing bar-toggle IPC shortcut continues to show or hide it manually.
 
-## Apply
+## Noctalia 5 migration
+
+This profile is retained for reference. The October 2026 update replaced its
+QML entrypoint with native Noctalia 5. Niri now uses the migrated profile in
+`niri/cachyos/custom/noctalia-profile/noctalia`; see `niri/cachyos/README.md`
+for setup, history findings, and configuration differences.
+
+## Apply (v4 only)
 
 `jq` is required. Run:
 

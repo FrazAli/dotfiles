@@ -1,0 +1,79 @@
+# Niri profile migrated from noctalia/v4/cachyos/bar-layout.jq.
+[shell]
+font_family = "Adwaita Sans"
+polkit_agent = true
+clipboard_enabled = false
+
+[shell.panel]
+shadow = false
+launcher_position = "center"
+
+[theme]
+mode = "dark"
+source = "custom"
+custom_palette = "Nord-Readable-Hover"
+
+[theme.templates]
+enable_builtin_templates = false
+
+[bar.default]
+position = "top"
+start = ["active_window", "overview", "workspaces"]
+center = []
+end = ["temp", "cpu", "ram", "separator", "brightness", "volume", "battery", "notifications", "control-center", "keyboard_layout", "clock"]
+background_opacity = 0.5
+widget_spacing = 6
+shadow = false
+contact_shadow = false
+concave_edge_corners = false
+radius = 0
+margin_edge = 4
+margin_ends = 4
+padding = 2
+scale = 1.0
+capsule = false
+auto_hide = true
+auto_hide_delay_ms = 3000
+show_on_workspace_switch = true
+reserve_space = false
+
+[widget.active_window]
+display = "icon_only"
+icon_size = 16
+min_length = 0
+
+[widget.overview]
+type = "custom_button"
+glyph = "layout-grid"
+tooltip = "Toggle overview"
+
+[widget.overview.actions]
+left = "exec niri msg action toggle-overview"
+
+[widget.workspaces]
+style = "regular"
+label_source = "id"
+show_labels = true
+capsule = false
+
+[widget.separator]
+type = "custom_button"
+label = "|"
+
+[widget.temp]
+type = "sysmon"
+stat = "cpu_temp"
+
+[widget.volume]
+show_label = false
+
+[widget.keyboard_layout]
+display = "short"
+show_glyph = false
+show_label = true
+
+[widget.clock]
+format = "{:%H:%M}"
+
+[wallpaper.default]
+path = "~/Pictures/Wallpapers/north.png"

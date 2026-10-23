@@ -10,10 +10,10 @@ binds {
 
     // Match the Hyprland Noctalia launcher shortcut.
     Super+Space hotkey-overlay-title="Application Launcher" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle";
+        spawn "noctalia" "msg" "panel-toggle" "launcher";
     }
     Super+Period hotkey-overlay-title="Emoji Picker" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "emoji";
+        spawn "noctalia" "msg" "panel-toggle" "launcher" "/emo";
     }
 
 
@@ -96,22 +96,37 @@ binds {
 
     // macOS-style lock-screen shortcut.
     Ctrl+Super+Q hotkey-overlay-title="Lock Screen" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock";
+        spawn "noctalia" "msg" "session" "lock";
     }
 
     // Noctalia panels and bar.
     Super+Comma hotkey-overlay-title="Settings" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle";
+        spawn "noctalia" "msg" "settings-toggle";
     }
     Ctrl+Alt+V hotkey-overlay-title="Clipboard History" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard";
+        spawn "noctalia" "msg" "panel-toggle" "clipboard";
     }
     Super+N hotkey-overlay-title="Notification History" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleHistory";
+        spawn "noctalia" "msg" "panel-toggle" "control-center" "notifications";
     }
     Super+S hotkey-overlay-title="Toggle Bar" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "bar" "toggle";
+        spawn "noctalia" "msg" "bar-toggle";
     }
+
+    // Override legacy Noctalia commands inherited from the CachyOS base.
+    Mod+Ctrl+Return { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+Alt+L { spawn "noctalia" "msg" "session" "lock"; }
+    Mod+Shift+Q { spawn "noctalia" "msg" "panel-toggle" "session"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute allow-when-locked=true { spawn "noctalia" "msg" "volume-mute"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "noctalia" "msg" "mic-mute"; }
+    XF86AudioNext allow-when-locked=true { spawn "noctalia" "msg" "media" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "noctalia" "msg" "media" "previous"; }
+    XF86AudioPlay allow-when-locked=true { spawn "noctalia" "msg" "media" "play-pause"; }
+    XF86AudioPause allow-when-locked=true { spawn "noctalia" "msg" "media" "play-pause"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia" "msg" "brightness-down"; }
 
     // macOS-style selected-region screenshot.
     Super+Shift+4 hotkey-overlay-title="Screenshot Region" { screenshot; }
