@@ -62,7 +62,7 @@ The native Noctalia 5 profile restores the icon-only active window, overview
 button, workspace labels, system monitors, brightness/volume/battery controls,
 notifications, control center, and short clock. A keyboard layout indicator is
 also included. It uses 50% bar opacity, square corners, no shadows, and a
-three-second auto-hide delay. V5 controls pointer reveal itself; the old 100 ms
+immediate auto-hide when the pointer leaves. V5 controls pointer reveal itself; the old 100 ms
 v4 reveal delay has no direct setting in this profile.
 
 The Nord-Readable-Hover palette is preserved, including light hover text. Its

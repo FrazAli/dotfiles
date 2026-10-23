@@ -33,7 +33,7 @@ padding = 2
 scale = 1.0
 capsule = false
 auto_hide = true
-auto_hide_delay_ms = 3000
+auto_hide_delay_ms = 0
 show_on_workspace_switch = true
 reserve_space = false
 
