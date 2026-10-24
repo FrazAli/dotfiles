@@ -77,3 +77,21 @@ format = "{:%H:%M}"
 
 [wallpaper.default]
 path = "~/Pictures/Wallpapers/north.png"
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+type = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+show_media = false
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+type = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+show_media = false
+
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+type = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+show_media = false
